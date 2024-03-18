@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import 'modern-normalize';
+import './fonts/fonts.css';
+
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -10,8 +12,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
-    /* color:  */
+    font-family: "MacPaw Fixel Display", sans-serif, "SF Pro Display", sans-serif;
+    color: ${({ theme }) => theme.black};
     background-color:#ffffff;
     height: 100%;
     width: 100%;
