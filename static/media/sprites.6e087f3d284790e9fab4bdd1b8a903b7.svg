@@ -52,7 +52,7 @@
     <symbol id="icon-vector" viewBox="0 0 39 32">
       <path d="m4.06.052 47.746 5.211-16.889 38.04L.029 16.222 4.061.052z"/>
     </symbol>
-    <symbol id="icon-x" viewBox="0 0 32 32">
+    <symbol id="icon-close" viewBox="0 0 32 32">
       <path fill="none" stroke="#fcfcfc" style="stroke:var(--color2, #fcfcfc)" stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
     <symbol id="icon-paw-gray" viewBox="0 0 32 32">
