@@ -1,20 +1,16 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container, LogoContainer, LogoMobSvg, LogoTitle } from './Layout.styled';
+import { Container } from './Layout.styled';
+import { Logo } from 'components/Logo/Logo';
 
 export default function Layout() {
   return (
     <Container>
-
-      <LogoContainer>
-        <LogoMobSvg />
-        <LogoTitle>VocabBuilder</LogoTitle>
-      </LogoContainer>
+      <Logo />
 
       <Suspense>
         <Outlet />
       </Suspense>
-      
     </Container>
   );
 }
