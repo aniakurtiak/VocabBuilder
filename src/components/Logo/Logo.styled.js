@@ -15,9 +15,18 @@ export const LogoContainer = styled.div`
   align-items: center;
   margin-top: 16px;
   gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   @media screen and (min-width: 768px){
     margin-top: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 `;
 
