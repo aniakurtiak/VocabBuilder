@@ -1,6 +1,11 @@
 import { ErrorMessage, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { ReactComponent as Vector } from '../../img/icons/vector.svg';
+
+export const RegisterWrapper = styled.div`
+  position: relative;
+`;
 
 export const Image = styled.img`
   margin-top: 12px;
@@ -27,10 +32,13 @@ export const AuthContainer = styled.div`
   padding-right: 16px;
   gap: 16px;
 
-
   @media screen and (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 48px 64px;
+    margin-top: 140px;
+    width: 628px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -45,6 +53,11 @@ export const AuthTitle = styled.h2`
   line-height: 1.07;
   letter-spacing: -0.02em;
   margin-top: 32px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    margin-top: 0px;
+  }
 `;
 
 export const AuthText = styled.p`
@@ -52,13 +65,22 @@ export const AuthText = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: rgba(18, 20, 23, 0.8);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    font-size: 20px;
+  }
 `;
 
 export const FormStyle = styled(Form)`
-  /* width: 100%; */
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @media screen and (min-width: 768px) {
+    gap: 18px;
+  }
 `;
 
 export const FieldStyle = styled(Field)`
@@ -106,7 +128,6 @@ export const StatusText = styled.div`
 export const BtnSubmit = styled.button`
   border-radius: 30px;
   padding: 16px 139px;
-  width: 343px;
   height: 56px;
   font-weight: 700;
   font-size: 16px;
@@ -116,20 +137,64 @@ export const BtnSubmit = styled.button`
   margin-top: 18px;
 
   &:hover {
-  background: #a5c0b8;
-}
+    background: #a5c0b8;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.56;
+    margin-bottom: 16px;
+  }
 `;
 
 export const LinkStyle = styled(Link)`
-font-weight: 700;
-font-size: 16px;
-line-height: 1.5;
-text-decoration: underline;
-text-decoration-skip-ink: none;
-color: rgba(18, 20, 23, 0.5);
-text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: rgba(18, 20, 23, 0.5);
+  text-align: center;
 
-&:hover {
+  &:hover {
     color: ${({ theme }) => theme.black};
+  }
+`;
+
+export const BenefitsList = styled.ul`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-top: 98px;
+    margin-bottom: 106px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(18, 20, 23, 0.8);
+  }
+`;
+
+export const BenefitItem = styled.li`
+  position: relative;
+  margin-right: 20px;
+  &:not(:last-child)::after {
+    content: '•';
+    position: absolute;
+    right: -10px;
+  }
+`;
+
+export const VectorSvg = styled(Vector)`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: -106px;
   }
 `;

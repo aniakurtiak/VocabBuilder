@@ -12,13 +12,17 @@ import {
   AuthContainer,
   AuthText,
   AuthTitle,
+  BenefitItem,
+  BenefitsList,
   BtnSubmit,
   ErrMsg,
   FieldStyle,
   FormStyle,
   Image,
   LinkStyle,
+  RegisterWrapper,
   StatusText,
+  VectorSvg,
 } from './RegisterPage.styled';
 import { Formik } from 'formik';
 
@@ -38,7 +42,7 @@ const RegisterPage = () => {
   });
 
   return (
-    <div>
+    <RegisterWrapper>
       <picture>
         <source
           srcSet={`${illustrationDesktopWebp} 1x, ${illustrationDesktop2xWebp} 2x`}
@@ -100,8 +104,18 @@ const RegisterPage = () => {
           )}
         </Formik>
         <LinkStyle to="/login">Login</LinkStyle>
+
       </AuthContainer>
-    </div>
+
+      <BenefitsList>
+        <BenefitItem>Word</BenefitItem>
+        <BenefitItem>Translation</BenefitItem>
+        <BenefitItem>Grammar</BenefitItem>
+        <BenefitItem>Progress</BenefitItem>
+      </BenefitsList>
+
+      <VectorSvg />
+    </RegisterWrapper>
   );
 };
 
