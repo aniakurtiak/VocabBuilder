@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { ReactComponent as Vector } from '../../img/icons/vector.svg';
 
-export const RegisterWrapper = styled.div`
+export const LoginrWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,8 @@ export const RegisterWrapper = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 64px;
+    margin-top: 114px;
+    margin-bottom: 104px;
     padding-left: 100px;
     padding-right: 100px;
     flex-direction: row;
@@ -51,15 +52,47 @@ export const Image = styled.img`
   @media screen and (min-width: 1440px) {
     display: block;
     margin-top: 0;
-
   }
 `;
 export const PictueStyle = styled.picture`
-
   @media screen and (min-width: 1440px) {
     order: 2;
   }
 `;
+
+export const BenefitsList = styled.ul`
+display: flex;
+font-size: 14px;
+font-weight: 400;
+color: rgba(18, 20, 23, 0.8);
+justify-content: center;
+margin-top: 16px;
+margin-bottom: 43px;
+
+@media screen and (min-width: 768px) {
+    margin-top: 172px;
+    margin-bottom: 106px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media screen and (min-width: 1440px) {
+    order: 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+`;
+
+export const BenefitItem = styled.li`
+  position: relative;
+  margin-right: 20px;
+  &:not(:last-child)::after {
+    content: '•';
+    position: absolute;
+    right: -10px;
+  }
+`;
+
 
 export const AuthContainer = styled.div`
   display: flex;
@@ -200,38 +233,6 @@ export const LinkStyle = styled(Link)`
   }
 `;
 
-export const BenefitsList = styled.ul`
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    margin-top: 98px;
-    margin-bottom: 106px;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: rgba(18, 20, 23, 0.8);
-  }
-
-  @media screen and (min-width: 1440px) {
-    order: 3;
-    margin-top: 0;
-    margin-bottom: 0;
-  
-  }
-`;
-
-export const BenefitItem = styled.li`
-  position: relative;
-  margin-right: 20px;
-  &:not(:last-child)::after {
-    content: '•';
-    position: absolute;
-    right: -10px;
-  }
-`;
 
 export const VectorSvg = styled(Vector)`
   display: none;
@@ -245,6 +246,6 @@ export const VectorSvg = styled(Vector)`
   }
 
   @media screen and (min-width: 768px) {
-    margin-bottom: -80px;
+    margin-bottom: -104px;
   }
 `;
