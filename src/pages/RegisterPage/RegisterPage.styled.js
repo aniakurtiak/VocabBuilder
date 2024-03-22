@@ -5,6 +5,38 @@ import { ReactComponent as Vector } from '../../img/icons/vector.svg';
 
 export const RegisterWrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 140px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 64px;
+    padding-left: 100px;
+    padding-right: 100px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+  }
+`;
+
+export const ImgWrap = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+
+    @media screen and (min-width: 1440px) {
+      gap: 16px;
+    }
+  }
 `;
 
 export const Image = styled.img`
@@ -18,6 +50,12 @@ export const Image = styled.img`
 
   @media screen and (min-width: 1440px) {
     display: block;
+    margin-top: 0;
+  }
+`;
+export const PictueStyle = styled.picture`
+  @media screen and (min-width: 1440px) {
+    order: 2;
   }
 `;
 
@@ -34,17 +72,14 @@ export const AuthContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     padding: 48px 64px;
-    margin-top: 140px;
+    margin-top: 0px;
     width: 628px;
     margin-left: auto;
     margin-right: auto;
     gap: 0px;
+    order: 1;
   }
 
-  @media screen and (min-width: 1440px) {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
 `;
 
 export const AuthTitle = styled.h2`
@@ -175,6 +210,13 @@ export const BenefitsList = styled.ul`
     line-height: 1.5;
     color: rgba(18, 20, 23, 0.8);
   }
+
+  @media screen and (min-width: 1440px) {
+    order: 3;
+    margin-top: 0;
+    margin-bottom: 0;
+  
+  }
 `;
 
 export const BenefitItem = styled.li`
@@ -195,6 +237,6 @@ export const VectorSvg = styled(Vector)`
     position: absolute;
     right: 0;
     bottom: 0;
-    margin-bottom: -106px;
+    margin-bottom: 0px;
   }
 `;

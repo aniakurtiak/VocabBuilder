@@ -19,7 +19,9 @@ import {
   FieldStyle,
   FormStyle,
   Image,
+  ImgWrap,
   LinkStyle,
+  PictueStyle,
   RegisterWrapper,
   StatusText,
   VectorSvg,
@@ -43,27 +45,38 @@ const RegisterPage = () => {
 
   return (
     <RegisterWrapper>
-      <picture>
-        <source
-          srcSet={`${illustrationDesktopWebp} 1x, ${illustrationDesktop2xWebp} 2x`}
-          media="(min-width: 1440px)"
-          type="image/webp"
-        />
-        <source
-          srcSet={`${illustrationDesktop} 1x, ${illustrationDesktop2x} 2x`}
-          media="(min-width: 1440px)"
-        />
-        <source
-          srcSet={`${illustrationMobWebp} 1x, ${illustrationMob2xWebp} 2x`}
-          media="(max-width: 767px)"
-          type="image/webp"
-        />
-        <source
-          srcSet={`${illustrationMob} 1x, ${illustrationMob2x} 2x`}
-          media="(max-width: 767px)"
-        />
-        <Image src={illustrationMobWebp} alt="people reading dictionary" />
-      </picture>
+
+     <ImgWrap>
+        <PictueStyle>
+          <source
+            srcSet={`${illustrationDesktopWebp} 1x, ${illustrationDesktop2xWebp} 2x`}
+            media="(min-width: 1440px)"
+            type="image/webp"
+          />
+          <source
+            srcSet={`${illustrationDesktop} 1x, ${illustrationDesktop2x} 2x`}
+            media="(min-width: 1440px)"
+          />
+          <source
+            srcSet={`${illustrationMobWebp} 1x, ${illustrationMob2xWebp} 2x`}
+            media="(max-width: 767px)"
+            type="image/webp"
+          />
+          <source
+            srcSet={`${illustrationMob} 1x, ${illustrationMob2x} 2x`}
+            media="(max-width: 767px)"
+          />
+          <Image src={illustrationMobWebp} alt="people reading dictionary" />
+        </PictueStyle>
+
+        <BenefitsList>
+        <BenefitItem>Word</BenefitItem>
+        <BenefitItem>Translation</BenefitItem>
+        <BenefitItem>Grammar</BenefitItem>
+        <BenefitItem>Progress</BenefitItem>
+      </BenefitsList>
+
+     </ImgWrap>
 
       <AuthContainer>
         <AuthTitle>Register</AuthTitle>
@@ -71,7 +84,6 @@ const RegisterPage = () => {
           To start using our services, please fill out the registration form
           below. All fields are mandatory:
         </AuthText>
-
         <Formik
           initialValues={{
             name: '',
@@ -104,15 +116,7 @@ const RegisterPage = () => {
           )}
         </Formik>
         <LinkStyle to="/login">Login</LinkStyle>
-
       </AuthContainer>
-
-      <BenefitsList>
-        <BenefitItem>Word</BenefitItem>
-        <BenefitItem>Translation</BenefitItem>
-        <BenefitItem>Grammar</BenefitItem>
-        <BenefitItem>Progress</BenefitItem>
-      </BenefitsList>
 
       <VectorSvg />
     </RegisterWrapper>
