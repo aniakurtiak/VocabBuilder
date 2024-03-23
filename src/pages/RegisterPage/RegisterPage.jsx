@@ -91,6 +91,7 @@ const RegisterPage = () => {
             password: '',
           }}
           onSubmit={(values, { setStatus }) => {
+            console.log(values);
             setStatus({ successPassword: 'Success password' }); // Встановлення статусу успіху для пароля
             // Отримання інших дій, наприклад, відправка даних на сервер або виконання інших дій після успішної валідації
           }}
