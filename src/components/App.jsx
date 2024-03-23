@@ -12,6 +12,7 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+      <Route index element={<RegisterPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dictionary" element={<DictionaryPage />} />
