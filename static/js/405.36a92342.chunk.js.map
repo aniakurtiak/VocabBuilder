@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/405.36a92342.chunk.js","mappings":"qJAQA,UANqB,WACnB,OACEA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,gBAET,C","sources":["pages/TrainingPage/TrainingPage.jsx"],"sourcesContent":["import React from 'react'\n\nconst TrainingPage = () =>{\n  return (\n    <div>TrainingPage</div>\n  )\n}\n\nexport default TrainingPage"],"names":["_jsx","children"],"sourceRoot":""}
