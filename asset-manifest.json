@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.bde52f5d.js",
+    "main.js": "/VocabBuilder/static/js/main.91faebf1.js",
     "static/js/215.9093771b.chunk.js": "/VocabBuilder/static/js/215.9093771b.chunk.js",
-    "static/js/977.3d51f24f.chunk.js": "/VocabBuilder/static/js/977.3d51f24f.chunk.js",
+    "static/js/977.4d9fdda1.chunk.js": "/VocabBuilder/static/js/977.4d9fdda1.chunk.js",
     "static/js/606.ed2f56f4.chunk.js": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js",
     "static/js/270.28df7b8c.chunk.js": "/VocabBuilder/static/js/270.28df7b8c.chunk.js",
     "static/js/405.36a92342.chunk.js": "/VocabBuilder/static/js/405.36a92342.chunk.js",
@@ -88,9 +88,9 @@
     "index.html": "/VocabBuilder/index.html",
     "static/media/vector.svg": "/VocabBuilder/static/media/vector.ed893f863e1429ff3e06ec12e3c1d587.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.bde52f5d.js.map": "/VocabBuilder/static/js/main.bde52f5d.js.map",
+    "main.91faebf1.js.map": "/VocabBuilder/static/js/main.91faebf1.js.map",
     "215.9093771b.chunk.js.map": "/VocabBuilder/static/js/215.9093771b.chunk.js.map",
-    "977.3d51f24f.chunk.js.map": "/VocabBuilder/static/js/977.3d51f24f.chunk.js.map",
+    "977.4d9fdda1.chunk.js.map": "/VocabBuilder/static/js/977.4d9fdda1.chunk.js.map",
     "606.ed2f56f4.chunk.js.map": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js.map",
     "270.28df7b8c.chunk.js.map": "/VocabBuilder/static/js/270.28df7b8c.chunk.js.map",
     "405.36a92342.chunk.js.map": "/VocabBuilder/static/js/405.36a92342.chunk.js.map",
@@ -98,6 +98,6 @@
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.bde52f5d.js"
+    "static/js/main.91faebf1.js"
   ]
 }
