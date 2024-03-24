@@ -27,14 +27,23 @@ import {
   StatusText,
   VectorSvg,
 } from './LoginPage.styled';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/auth/operation';
 
 const LoginPage = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = values => {
+    dispatch(logIn(values));
+    console.log(values);
+  }
+
   const RegisterSchema = Yup.object().shape({
     email: Yup.string()
       .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
       .required('Required'),
     password: Yup.string()
-      .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Error password')
+    .matches(/^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/, 'Error password')
       .required('Required'),
   });
 
@@ -81,10 +90,7 @@ const LoginPage = () => {
             email: '',
             password: '',
           }}
-          onSubmit={(values, { setStatus }) => {
-            setStatus({ successPassword: 'Success password' }); // Встановлення статусу успіху для пароля
-            // Отримання інших дій, наприклад, відправка даних на сервер або виконання інших дій після успішної валідації
-          }}
+          onSubmit={handleSubmit}
           validationSchema={RegisterSchema}
         >
           {({ values, errors, touched, handleChange, handleBlur, status }) => (
