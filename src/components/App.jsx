@@ -4,14 +4,18 @@ import Layout from './Layout/Layout';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from '../redux/auth/operation';
 import { useAuth } from 'hooks';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
+
+
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const DictionaryPage = lazy(() => import('../pages/DictionaryPage/DictionaryPage'));
 const RecommendPage = lazy(() => import('../pages/RecommendPage/RecommendPage'));
 const TrainingPage = lazy(() => import('../pages/TrainingPage/TrainingPage'));
 
-export const App = () => {
 
+export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
@@ -25,11 +29,39 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<RegisterPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/dictionary" element={<DictionaryPage />} />
-        <Route path="/recommend" element={<RecommendPage />} />
-        <Route path="/training" element={<TrainingPage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              component={RegisterPage}
+              redirectTo="/dictionary"
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute component={LoginPage} redirectTo="/dictionary" />
+          }
+        />
+        <Route
+          path="/dictionary"
+          element={
+            <PrivateRoute component={DictionaryPage} redirectTo="/login" />
+          }
+        />
+        <Route
+          path="/recommend"
+          element={
+            <PrivateRoute component={RecommendPage} redirectTo="/login" />
+          }
+        />
+        <Route
+          path="/training"
+          element={
+            <PrivateRoute component={TrainingPage} redirectTo="/login" />
+          }
+        />
       </Route>
     </Routes>
   );

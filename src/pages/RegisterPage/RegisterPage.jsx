@@ -23,12 +23,20 @@ import {
   LinkStyle,
   PictueStyle,
   RegisterWrapper,
-  StatusText,
   VectorSvg,
 } from './RegisterPage.styled';
 import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operation';
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = values => {
+    dispatch(register(values));
+    console.log(values);
+  }
+
   const RegisterSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Too Short!')
@@ -39,7 +47,7 @@ const RegisterPage = () => {
       .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
       .required('Required'),
     password: Yup.string()
-      .matches(/^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Error password')
+    .matches(/^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/, 'The password must consist of 6 English letters and 1 numberd')
       .required('Required'),
   });
 
@@ -90,11 +98,7 @@ const RegisterPage = () => {
             email: '',
             password: '',
           }}
-          onSubmit={(values, { setStatus }) => {
-            console.log(values);
-            setStatus({ successPassword: 'Success password' }); // Встановлення статусу успіху для пароля
-            // Отримання інших дій, наприклад, відправка даних на сервер або виконання інших дій після успішної валідації
-          }}
+          onSubmit={handleSubmit}
           validationSchema={RegisterSchema}
         >
           {({ values, errors, touched, handleChange, handleBlur, status }) => (
@@ -109,9 +113,6 @@ const RegisterPage = () => {
                 placeholder="Password"
               />
               <ErrMsg name="password" component="div" />
-              {status && status.successPassword && (
-                <StatusText>{status.successPassword}</StatusText> // Відображення повідомлення про успіх, якщо воно є в статусі
-              )}
               <BtnSubmit type="submit">Register</BtnSubmit>
             </FormStyle>
           )}
@@ -124,4 +125,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default RegisterPage
