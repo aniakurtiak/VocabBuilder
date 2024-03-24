@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const LogoSvg = styled.svg`
@@ -10,13 +11,18 @@ export const LogoSvg = styled.svg`
   }
 `;
 
-export const LogoContainer = styled.div`
+export const NavLinkStyle = styled(NavLink)`
   display: flex;
   align-items: center;
   margin-top: 16px;
   gap: 16px;
   padding-left: 16px;
   padding-right: 16px;
+  color: ${({ theme }) => theme.black};
+  &:hover {
+   color: ${({ theme }) => theme.black};
+  }
+
 
   @media screen and (min-width: 768px){
     margin-top: 24px;
