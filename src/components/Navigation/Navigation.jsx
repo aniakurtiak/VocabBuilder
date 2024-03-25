@@ -1,7 +1,7 @@
 import { Logo } from 'components/Logo/Logo';
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { logOut } from '../../redux/auth/operation';
+// import { useDispatch } from 'react-redux';
+// import { logOut } from '../../redux/auth/operation';
 import { UserBar } from 'components/UserBar/UserBar';
 import {
   BurgerMenuBtn,
@@ -9,12 +9,12 @@ import {
   NavContainer,
   UserBarWrapper,
 } from './Navigation.styled';
-import sprite from '../../img/icons/sprites.svg';
+// import sprite from '../../img/icons/sprites.svg';
 import { UserNav } from 'components/UserNav/UserNav';
 
 export const Navigation = () => {
-  const dispatch = useDispatch();
-  const handleLogOut = () => dispatch(logOut());
+  // const dispatch = useDispatch();
+  // const handleLogOut = () => dispatch(logOut());
 
   return (
     <NavContainer>
