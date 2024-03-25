@@ -14,26 +14,12 @@ export const LogoSvg = styled.svg`
 export const NavLinkStyle = styled(NavLink)`
   display: flex;
   align-items: center;
-  margin-top: 16px;
   gap: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
   color: ${({ theme }) => theme.black};
   &:hover {
    color: ${({ theme }) => theme.black};
   }
 
-
-  @media screen and (min-width: 768px){
-    margin-top: 24px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
 `;
 
 export const LogoTitle = styled.h1`

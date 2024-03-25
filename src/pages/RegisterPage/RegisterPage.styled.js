@@ -9,19 +9,18 @@ export const RegisterWrapper = styled.div`
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    margin-top: 140px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-top: 140px;
+    padding-bottom: 106px;
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: 64px;
-    padding-left: 100px;
-    padding-right: 100px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 80px;
+    padding-top:64px;
+    padding-bottom: 80px;
+    padding-right: 34px;
+
   }
 `;
 
@@ -80,6 +79,11 @@ export const AuthContainer = styled.div`
     margin-right: auto;
     gap: 0px;
     order: 1;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 0;
+    margin-right: 0;
   }
 
 `;
@@ -206,7 +210,6 @@ export const BenefitsList = styled.ul`
   @media screen and (min-width: 768px) {
     display: flex;
     margin-top: 98px;
-    margin-bottom: 106px;
     justify-content: center;
     align-items: center;
     font-weight: 400;
@@ -218,7 +221,7 @@ export const BenefitsList = styled.ul`
   @media screen and (min-width: 1440px) {
     order: 3;
     margin-top: 0;
-    margin-bottom: 0;
+
   
   }
 `;
@@ -244,7 +247,7 @@ export const VectorSvg = styled(Vector)`
     margin-bottom: 0px;
   }
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: -80px;
+  @media screen and (min-width: 1440px) {
+    margin-right: -34px;
   }
 `;

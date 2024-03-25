@@ -1,16 +1,16 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container } from './Layout.styled';
+import { Container, HeaderStyle } from './Layout.styled';
 import { Logo } from 'components/Logo/Logo';
 import { useAuth } from 'hooks';
-import { UserNav } from 'components/UserNav/UserNav';
+import { Navigation } from 'components/Navigation/Navigation';
 
 export default function Layout() {
   const { isLoggedIn } = useAuth();
 
   return (
     <Container>
-      <header> {isLoggedIn ? <UserNav /> : <Logo />}</header>
+      <HeaderStyle> {isLoggedIn ? <Navigation /> : <Logo />}</HeaderStyle>
 
       <Suspense>
         <Outlet />
