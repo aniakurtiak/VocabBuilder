@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import { NavLinkMenu, UserNavItem, UserNavList } from './UserNav.styled'
 
 export const UserNav = () => {
