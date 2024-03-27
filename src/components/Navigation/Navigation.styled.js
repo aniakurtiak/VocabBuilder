@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as BurgerMenu } from '../../img/icons/burger-menu.svg';
+import { ReactComponent as BurgerMenu } from '../../icons/burger-menu.svg';
 
 export const NavContainer = styled.div`
   display: flex;

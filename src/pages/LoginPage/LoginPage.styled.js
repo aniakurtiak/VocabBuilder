@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { ReactComponent as Vector } from '../../img/icons/vector.svg';
+import { ReactComponent as Vector } from '../../icons/vector.svg';
 
 export const LoginrWrapper = styled.div`
   position: relative;
