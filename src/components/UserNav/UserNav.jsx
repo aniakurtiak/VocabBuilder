@@ -1,18 +1,18 @@
 import React from 'react'
-import { NavLinkMenu, UserNavItem, UserNavList } from './UserNav.styled'
+import { NavLinkMenu, UserNavList } from './UserNav.styled'
 
 export const UserNav = () => {
   return (
         <UserNavList>
-            <UserNavItem>
+            <li>
                 <NavLinkMenu to = "/dictionary">Dictionary</NavLinkMenu>
-            </UserNavItem>
-            <UserNavItem>
+            </li>
+            <li>
                 <NavLinkMenu to = "/recommend">Reccomend</NavLinkMenu>
-            </UserNavItem>
-            <UserNavItem>
+            </li>
+            <li>
                 <NavLinkMenu to = "/training">Training</NavLinkMenu>
-            </UserNavItem>
+            </li>
         </UserNavList>   
   )
 }

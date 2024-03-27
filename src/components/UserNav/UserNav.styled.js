@@ -11,16 +11,6 @@ export const UserNavList = styled.ul`
   }
 `;
 
-export const UserNavItem = styled.li`
-    /* padding: 12px 20px; */
-
-  /* &:hover {
-    border-radius: 15px;
-    padding: 12px 20px;
-    background: ${({ theme }) => theme.green};
-    color: ${({ theme }) => theme.white};
-  } */
-`;
 
 export const NavLinkMenu = styled(NavLink)`
   font-weight: 500;

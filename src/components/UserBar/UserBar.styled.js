@@ -17,12 +17,21 @@ export const UserContainer = styled.div`
   height: 36px;
   background: ${({ theme }) => theme.green};
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 export const UserName = styled.p`
 font-weight: 500;
 font-size: 16px;
 line-height: 1.5;
+
+@media screen and (min-width: 768px) {
+    font-size: 20px;
+}
 `;
 
 export const UserSvg = styled.svg`
@@ -32,4 +41,9 @@ export const UserSvg = styled.svg`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
 `;

@@ -1,6 +1,6 @@
 import { useAuth } from 'hooks';
 import React from 'react';
-import sprite from '../../img/icons/sprites.svg';
+import sprite from '../../icons/sprites.svg';
 import { UserBarContainer, UserContainer, UserName, UserSvg } from './UserBar.styled';
 
 export const UserBar = () => {

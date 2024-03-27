@@ -1,5 +1,5 @@
 import React from 'react';
-import sprite from '../../img/icons/sprites.svg';
+import sprite from '../../icons/sprites.svg';
 import { LogoSvg, LogoTitle, NavLinkStyle } from './Logo.styled';
 
 export const Logo = () => {

@@ -7,6 +7,17 @@ import { Navigation } from 'components/Navigation/Navigation';
 
 export default function Layout() {
   const { isLoggedIn } = useAuth();
+  // const [isOpen, setIsOpen] = useState(false);
+
+
+  // const toggleModal = () => {
+  //   setIsOpen(prevState => !prevState);
+  // };
+
+  // const close = () => {
+  //   setIsOpen(false);
+  // };
+
 
   return (
     <Container>
