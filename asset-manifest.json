@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.e073bb2a.js",
+    "main.js": "/VocabBuilder/static/js/main.ea3cda55.js",
     "static/js/215.f8969772.chunk.js": "/VocabBuilder/static/js/215.f8969772.chunk.js",
     "static/js/977.c9f457fc.chunk.js": "/VocabBuilder/static/js/977.c9f457fc.chunk.js",
     "static/js/606.ed2f56f4.chunk.js": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js",
@@ -10,6 +10,7 @@
     "static/js/7.a7bd6d78.chunk.js": "/VocabBuilder/static/js/7.a7bd6d78.chunk.js",
     "static/js/218.376cc1ec.chunk.js": "/VocabBuilder/static/js/218.376cc1ec.chunk.js",
     "static/media/illustrationDesktop@2x.png": "/VocabBuilder/static/media/illustrationDesktop@2x.f9e8831c4824889bea0c.png",
+    "static/media/illustrationTabMenu@2x.png": "/VocabBuilder/static/media/illustrationTabMenu@2x.a8e7856e0c39a46f1ca9.png",
     "static/media/SF-Pro-Display-Semibold.otf": "/VocabBuilder/static/media/SF-Pro-Display-Semibold.037dc63930459813f575.otf",
     "static/media/SF-Pro-Display-Heavy.otf": "/VocabBuilder/static/media/SF-Pro-Display-Heavy.cfa3bd7b4cd82b11760b.otf",
     "static/media/SF-Pro-Display-Medium.otf": "/VocabBuilder/static/media/SF-Pro-Display-Medium.b85d841dacb040b84951.otf",
@@ -19,6 +20,7 @@
     "static/media/SF-Pro-Display-Thin.otf": "/VocabBuilder/static/media/SF-Pro-Display-Thin.118dea390f52cf393735.otf",
     "static/media/SF-Pro-Display-Ultralight.otf": "/VocabBuilder/static/media/SF-Pro-Display-Ultralight.08684652aee5807a63d9.otf",
     "static/media/SF-Pro-Display-Regular.otf": "/VocabBuilder/static/media/SF-Pro-Display-Regular.d1f5e6e16dd4f75c3950.otf",
+    "static/media/illustrationMobMenu@2x.png": "/VocabBuilder/static/media/illustrationMobMenu@2x.2523abbd4a53ff1903e8.png",
     "static/media/SF-Pro-Display-MediumItalic.otf": "/VocabBuilder/static/media/SF-Pro-Display-MediumItalic.96038c89a401495b43e6.otf",
     "static/media/SF-Pro-Display-SemiboldItalic.otf": "/VocabBuilder/static/media/SF-Pro-Display-SemiboldItalic.83c857f3c60b41485937.otf",
     "static/media/SF-Pro-Display-BoldItalic.otf": "/VocabBuilder/static/media/SF-Pro-Display-BoldItalic.9ef8d09009e261609c55.otf",
@@ -44,6 +46,7 @@
     "static/media/SF-Pro-Display-Black.woff": "/VocabBuilder/static/media/SF-Pro-Display-Black.b367e31ade83ed184ea0.woff",
     "static/media/SF-Pro-Display-Regular.woff": "/VocabBuilder/static/media/SF-Pro-Display-Regular.2a8f723b612ff2786aa3.woff",
     "static/media/MacPawFixelDisplay-Light.otf": "/VocabBuilder/static/media/MacPawFixelDisplay-Light.3975468d5ab9861fd671.otf",
+    "static/media/illustrationTabMenu.png": "/VocabBuilder/static/media/illustrationTabMenu.4267f98d0bb8ffa849c4.png",
     "static/media/MacPawFixelDisplay-Regular.otf": "/VocabBuilder/static/media/MacPawFixelDisplay-Regular.fc2642c2acde54a0ea4a.otf",
     "static/media/MacPawFixelDisplay-Thin.otf": "/VocabBuilder/static/media/MacPawFixelDisplay-Thin.5ad0407ae5df8b768cb0.otf",
     "static/media/SF-Pro-Display-Heavy.woff2": "/VocabBuilder/static/media/SF-Pro-Display-Heavy.e0e6b8932742cfa913ba.woff2",
@@ -72,6 +75,7 @@
     "static/media/MacPawFixelDisplay-Light.woff": "/VocabBuilder/static/media/MacPawFixelDisplay-Light.392f138d598d9d17af2f.woff",
     "static/media/SF-Pro-Display-RegularItalic.woff2": "/VocabBuilder/static/media/SF-Pro-Display-RegularItalic.58e2a6fdbe9a6192f67b.woff2",
     "static/media/MacPawFixelDisplay-Regular.woff": "/VocabBuilder/static/media/MacPawFixelDisplay-Regular.fdaaaef711d264f3c465.woff",
+    "static/media/illustrationMobMenu.png": "/VocabBuilder/static/media/illustrationMobMenu.8f8cf0d0cae097b10a94.png",
     "static/media/MacPawFixelDisplay-Thin.woff": "/VocabBuilder/static/media/MacPawFixelDisplay-Thin.282c033979905e0a48c7.woff",
     "static/media/illustrationDesktop@2x.webp": "/VocabBuilder/static/media/illustrationDesktop@2x.bb8e08daeecd9aaf838f.webp",
     "static/media/MacPawFixelDisplay-ExtraBold.woff2": "/VocabBuilder/static/media/MacPawFixelDisplay-ExtraBold.4ae3eb9e12eff260c78c.woff2",
@@ -82,15 +86,19 @@
     "static/media/MacPawFixelDisplay-Light.woff2": "/VocabBuilder/static/media/MacPawFixelDisplay-Light.4d69576b6baad8a1ca1a.woff2",
     "static/media/MacPawFixelDisplay-Regular.woff2": "/VocabBuilder/static/media/MacPawFixelDisplay-Regular.789b6cdf8e1ff154477e.woff2",
     "static/media/MacPawFixelDisplay-Thin.woff2": "/VocabBuilder/static/media/MacPawFixelDisplay-Thin.5bbe179eca08046139cc.woff2",
+    "static/media/illustrationTabMenu@2x.webp": "/VocabBuilder/static/media/illustrationTabMenu@2x.95160c695a3fda2b1d84.webp",
+    "static/media/illustrationMobMenu@2x.webp": "/VocabBuilder/static/media/illustrationMobMenu@2x.e87fc8b3751950f7f68b.webp",
     "static/media/illustrationDesktop.webp": "/VocabBuilder/static/media/illustrationDesktop.49e86480236e393ce148.webp",
     "static/media/illustrationMob@2x.webp": "/VocabBuilder/static/media/illustrationMob@2x.2e612da2627d6dd04bab.webp",
+    "static/media/illustrationTabMenu.webp": "/VocabBuilder/static/media/illustrationTabMenu.142ec9c8edfcaa456114.webp",
+    "static/media/illustrationMobMenu.webp": "/VocabBuilder/static/media/illustrationMobMenu.4c920c31febe6b5bdb0f.webp",
     "static/media/illustrationMob.webp": "/VocabBuilder/static/media/illustrationMob.7dcfa31102df3fabf683.webp",
     "static/media/sprites.svg": "/VocabBuilder/static/media/sprites.ea21288828041db2eb77be405a1bd9f4.svg",
     "index.html": "/VocabBuilder/index.html",
     "static/media/vector.svg": "/VocabBuilder/static/media/vector.ed893f863e1429ff3e06ec12e3c1d587.svg",
     "static/media/burger-menu.svg": "/VocabBuilder/static/media/burger-menu.424592733778a4d52889214303e00fd1.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.e073bb2a.js.map": "/VocabBuilder/static/js/main.e073bb2a.js.map",
+    "main.ea3cda55.js.map": "/VocabBuilder/static/js/main.ea3cda55.js.map",
     "215.f8969772.chunk.js.map": "/VocabBuilder/static/js/215.f8969772.chunk.js.map",
     "977.c9f457fc.chunk.js.map": "/VocabBuilder/static/js/977.c9f457fc.chunk.js.map",
     "606.ed2f56f4.chunk.js.map": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js.map",
@@ -101,6 +109,6 @@
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.e073bb2a.js"
+    "static/js/main.ea3cda55.js"
   ]
 }
