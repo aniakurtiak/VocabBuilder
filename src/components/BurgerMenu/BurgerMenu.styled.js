@@ -8,13 +8,26 @@ export const MenuConatainer = styled.div`
   overflow: auto;
   top: 0;
   right: 0;
-  padding: 16px;
   background: ${({ theme }) => theme.green};
 
   @media screen and (min-width: 768px) {
     width: 300px;
     height: 1024px;
-    padding: 20px 32px;
+  }
+`;
+
+export const MenuWrapper = styled.div`
+  display: flex;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 `;
 
@@ -23,12 +36,6 @@ export const BtnClose = styled.svg`
   height: 32px;
   background-color: transparent;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 16px;
-  right: 16px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
 
@@ -63,10 +70,14 @@ export const UserNavList = styled.ul`
   flex-direction: column;
   align-items: start;
   gap: 28px;
+  padding-left: 16px;
+  margin-bottom: 139px;
 
-    @media screen and (min-width: 768px) {
-        margin-top: 170px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-top: 170px;
+    padding-left: 32px;
+    margin-bottom: 214px;
+  }
 `;
 
 export const NavLinkMenu = styled(NavLink)`
