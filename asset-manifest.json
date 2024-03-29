@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.ea3cda55.js",
-    "static/js/215.f8969772.chunk.js": "/VocabBuilder/static/js/215.f8969772.chunk.js",
-    "static/js/977.c9f457fc.chunk.js": "/VocabBuilder/static/js/977.c9f457fc.chunk.js",
-    "static/js/606.ed2f56f4.chunk.js": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js",
-    "static/js/270.28df7b8c.chunk.js": "/VocabBuilder/static/js/270.28df7b8c.chunk.js",
+    "main.js": "/VocabBuilder/static/js/main.2a044879.js",
+    "static/js/215.856c4412.chunk.js": "/VocabBuilder/static/js/215.856c4412.chunk.js",
+    "static/js/977.87115f04.chunk.js": "/VocabBuilder/static/js/977.87115f04.chunk.js",
+    "static/js/209.86d4cd87.chunk.js": "/VocabBuilder/static/js/209.86d4cd87.chunk.js",
+    "static/js/287.8ef2bc71.chunk.js": "/VocabBuilder/static/js/287.8ef2bc71.chunk.js",
     "static/js/405.36a92342.chunk.js": "/VocabBuilder/static/js/405.36a92342.chunk.js",
-    "static/js/7.a7bd6d78.chunk.js": "/VocabBuilder/static/js/7.a7bd6d78.chunk.js",
+    "static/js/485.fe320330.chunk.js": "/VocabBuilder/static/js/485.fe320330.chunk.js",
+    "static/js/7.f2abf5c1.chunk.js": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js",
     "static/js/218.376cc1ec.chunk.js": "/VocabBuilder/static/js/218.376cc1ec.chunk.js",
     "static/media/illustrationDesktop@2x.png": "/VocabBuilder/static/media/illustrationDesktop@2x.f9e8831c4824889bea0c.png",
     "static/media/illustrationTabMenu@2x.png": "/VocabBuilder/static/media/illustrationTabMenu@2x.a8e7856e0c39a46f1ca9.png",
@@ -97,18 +98,20 @@
     "index.html": "/VocabBuilder/index.html",
     "static/media/vector.svg": "/VocabBuilder/static/media/vector.ed893f863e1429ff3e06ec12e3c1d587.svg",
     "static/media/burger-menu.svg": "/VocabBuilder/static/media/burger-menu.424592733778a4d52889214303e00fd1.svg",
+    "static/media/search.svg": "/VocabBuilder/static/media/search.0c70c359be9f625367cb2a522feff44d.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.ea3cda55.js.map": "/VocabBuilder/static/js/main.ea3cda55.js.map",
-    "215.f8969772.chunk.js.map": "/VocabBuilder/static/js/215.f8969772.chunk.js.map",
-    "977.c9f457fc.chunk.js.map": "/VocabBuilder/static/js/977.c9f457fc.chunk.js.map",
-    "606.ed2f56f4.chunk.js.map": "/VocabBuilder/static/js/606.ed2f56f4.chunk.js.map",
-    "270.28df7b8c.chunk.js.map": "/VocabBuilder/static/js/270.28df7b8c.chunk.js.map",
+    "main.2a044879.js.map": "/VocabBuilder/static/js/main.2a044879.js.map",
+    "215.856c4412.chunk.js.map": "/VocabBuilder/static/js/215.856c4412.chunk.js.map",
+    "977.87115f04.chunk.js.map": "/VocabBuilder/static/js/977.87115f04.chunk.js.map",
+    "209.86d4cd87.chunk.js.map": "/VocabBuilder/static/js/209.86d4cd87.chunk.js.map",
+    "287.8ef2bc71.chunk.js.map": "/VocabBuilder/static/js/287.8ef2bc71.chunk.js.map",
     "405.36a92342.chunk.js.map": "/VocabBuilder/static/js/405.36a92342.chunk.js.map",
-    "7.a7bd6d78.chunk.js.map": "/VocabBuilder/static/js/7.a7bd6d78.chunk.js.map",
+    "485.fe320330.chunk.js.map": "/VocabBuilder/static/js/485.fe320330.chunk.js.map",
+    "7.f2abf5c1.chunk.js.map": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js.map",
     "218.376cc1ec.chunk.js.map": "/VocabBuilder/static/js/218.376cc1ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.ea3cda55.js"
+    "static/js/main.2a044879.js"
   ]
 }

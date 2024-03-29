@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_create_app=self.webpackChunkreact_create_app||[]).push([[606],{2606:function(e,a,c){c.r(a);c(2791);var r=c(184);a.default=function(){return(0,r.jsx)("div",{children:"DictionaryPage"})}}}]);
-//# sourceMappingURL=606.ed2f56f4.chunk.js.map
