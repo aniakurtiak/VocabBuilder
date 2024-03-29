@@ -11,6 +11,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import persistStore from 'redux-persist/es/persistStore';
+import { filtersReducer } from './filters/filtersSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -21,6 +22,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    filters: filtersReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

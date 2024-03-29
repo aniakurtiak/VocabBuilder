@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { RecommendContainer } from './RecommendPage.styled';
+import { Dashboard } from 'components/Dashboard/Dashboard';
 
 const RecommendPage = () => {
   return (
-    <div>RecommendPage</div>
-  )
-}
+    <RecommendContainer>
+      <Dashboard />
+    </RecommendContainer>
+  );
+};
 
-export default RecommendPage
+export default RecommendPage;

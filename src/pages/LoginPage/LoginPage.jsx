@@ -35,7 +35,6 @@ const LoginPage = () => {
 
   const handleSubmit = values => {
     dispatch(logIn(values));
-    console.log(values);
   }
 
   const RegisterSchema = Yup.object().shape({

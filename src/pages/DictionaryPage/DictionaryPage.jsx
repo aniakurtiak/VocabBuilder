@@ -1,9 +1,13 @@
-import React from 'react'
+import { Dashboard } from 'components/Dashboard/Dashboard';
+import React from 'react';
+import { DictionaryContainer } from './DictionaryPage.styled';
 
 const DictionaryPage = () => {
   return (
-    <div>DictionaryPage</div>
-  )
-}
+    <DictionaryContainer>
+      <Dashboard />
+    </DictionaryContainer>
+  );
+};
 
-export default DictionaryPage
+export default DictionaryPage;

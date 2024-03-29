@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export const MenuConatainer = styled.div`
   position: absolute;
   width: 185px;
-  height: 812px;
+  max-height: 100vh;
+  /* height: 812px; */
   overflow: auto;
   top: 0;
   right: 0;

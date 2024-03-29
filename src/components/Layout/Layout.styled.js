@@ -22,9 +22,11 @@ export const Container = styled.div`
 
 export const HeaderStyle = styled.header`
   margin-top: 16px;
+  margin-bottom: 16px;
 
   @media screen and (min-width: 768px){
     margin-top: 24px;
+    margin-bottom: 24px;
   }
 `
 
