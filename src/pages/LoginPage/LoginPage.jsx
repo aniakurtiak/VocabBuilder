@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import illustrationMob from '../../img/illustrationMob.png';
@@ -29,13 +29,24 @@ import {
 } from './LoginPage.styled';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operation';
+import { useAuth } from 'hooks';
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const { error } = useAuth();
 
   const handleSubmit = values => {
     dispatch(logIn(values));
   }
+  
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
+
+
 
   const RegisterSchema = Yup.object().shape({
     email: Yup.string()

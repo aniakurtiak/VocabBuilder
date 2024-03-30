@@ -11,3 +11,7 @@ export const selectSelectedCategory = state => state.filters.selectedCategory;
 export const selectSearchKeyword = state => state.filters.searchKeyword;
 
 export const selectSelectedVerbType = state => state.filters.selectedVerbType;
+
+export const selectError = state => state.auth.error;
+
+export const selectIsLoading = state => state.auth.isLoading;

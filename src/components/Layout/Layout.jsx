@@ -4,11 +4,11 @@ import { Container, HeaderStyle } from './Layout.styled';
 import { Logo } from 'components/Logo/Logo';
 import { useAuth } from 'hooks';
 import { Navigation } from 'components/Navigation/Navigation';
+import { Toaster } from 'react-hot-toast';
 
 export default function Layout() {
   const { isLoggedIn } = useAuth();
   // const [isOpen, setIsOpen] = useState(false);
-
 
   // const toggleModal = () => {
   //   setIsOpen(prevState => !prevState);
@@ -18,7 +18,6 @@ export default function Layout() {
   //   setIsOpen(false);
   // };
 
-
   return (
     <Container>
       <HeaderStyle> {isLoggedIn ? <Navigation /> : <Logo />}</HeaderStyle>
@@ -26,6 +25,7 @@ export default function Layout() {
       <Suspense>
         <Outlet />
       </Suspense>
+      <Toaster position="top-center" reverseOrder={false} />
     </Container>
   );
 }

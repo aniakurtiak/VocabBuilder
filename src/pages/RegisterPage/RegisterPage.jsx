@@ -29,21 +29,22 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operation';
 import toast from 'react-hot-toast';
+import { useAuth } from 'hooks';
 
 const RegisterPage = () => {
+  const { error } = useAuth();
   const dispatch = useDispatch();
 
   const handleSubmit = values => {
-    dispatch(register(values))
-    // console.log(values);
-    .then(() => {
-      toast.success('You have successfully registered!');
-      // history.push('/login');
-    })
-    .catch(error => {
-      toast.error('Oops, something went wrong. Please try again');
-    });
-  }
+    toast.promise(
+      dispatch(register(values)),
+         {
+           loading: 'Saving...',
+           success: <b>You have successfully registered!</b>,
+           error: <b>{error}</b>,
+         }
+       );
+        }
 
   const RegisterSchema = Yup.object().shape({
     name: Yup.string()
@@ -132,4 +133,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage
+export default RegisterPage;
