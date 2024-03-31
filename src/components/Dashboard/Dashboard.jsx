@@ -1,5 +1,5 @@
 import { Filters } from 'components/Filters/Filters';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AddWordButton,
   DashboardContainer,
@@ -10,8 +10,18 @@ import {
   Wrapper,
 } from './Dashboard.styled';
 import sprite from '../../icons/sprites.svg';
+import { Modal } from 'components/Modal/Modal';
+import { AddWordModal } from 'components/AddWordModal/AddWordModal';
 
 export const Dashboard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(prevState => !prevState);
+  };
+
+
+
   return (
     <DashboardContainer>
       <Filters />
@@ -19,7 +29,7 @@ export const Dashboard = () => {
       <StatisticsContainer>
         <StatisticsText>To study: </StatisticsText>
         <Wrapper>
-          <AddWordButton>
+          <AddWordButton type='button' onClick={toggleModal}>
             Add word
             <IconSvg>
               <use href={`${sprite}#icon-plus`}></use>
@@ -33,6 +43,12 @@ export const Dashboard = () => {
           </NavLinkStyle>
         </Wrapper>
       </StatisticsContainer>
+
+      {isOpen && (
+        <Modal toggleModal={toggleModal}>
+          {<AddWordModal toggleModal={toggleModal} />}
+        </Modal>
+      )}
     </DashboardContainer>
   );
 };
