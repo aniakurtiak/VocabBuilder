@@ -21,6 +21,9 @@ const filtersSlice = createSlice({
     setVerbType(state, action) {
       state.selectedVerbType = action.payload;
     },
+    setSelectedCategory(state, action) {
+      state.selectedCategory = action.payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -37,4 +40,4 @@ const filtersSlice = createSlice({
 });
 
 export const filtersReducer = filtersSlice.reducer;
-export const { setCategory, setKeyword, setVerbType } = filtersSlice.actions;
+export const { setCategory, setKeyword, setVerbType, setSelectedCategory } = filtersSlice.actions;
