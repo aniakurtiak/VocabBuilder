@@ -9,6 +9,8 @@ import {
   FlagIcon,
   FormBtn,
   FormStyle,
+  FormWrapper,
+  InputWrapper,
   LabelStyle,
   ModalTitle,
   ModaltText,
@@ -123,30 +125,37 @@ export const AddWordModal = ({ toggleModal }) => {
             )}
           </CategoriesWrapper>
 
-          <LabelStyle htmlFor = 'ua'>
-            <FlagIcon>
-              <use href={`${sprite}#icon-ua`}></use>
-            </FlagIcon>
-            Ukrainian:
-          </LabelStyle>
-            <FieldStyle type="text" name="ua" id = "ua" />
-          <ErrMsgStyle name="ua" component="div" />
+        <FormWrapper>
+            <InputWrapper>
+              <LabelStyle htmlFor="ua">
+                <FlagIcon>
+                  <use href={`${sprite}#icon-ua`}></use>
+                </FlagIcon>
+                Ukrainian
+              </LabelStyle>
+                <FieldStyle type="text" name="ua" id="ua" />
+                <ErrMsgStyle name="ua" component="div" />
+            </InputWrapper>
+  
+           <InputWrapper>
+              <LabelStyle htmlFor="uk">
+                <FlagIcon>
+                  <use href={`${sprite}#icon-uk`}></use>
+                </FlagIcon>
+                English
+              </LabelStyle>
+              <FieldStyle type="text" name="en" id="uk" />
+            <ErrMsgStyle name="en" component="div" />
+           </InputWrapper>
+  
+        </FormWrapper>
 
-          <LabelStyle htmlFor='uk'>
-            <FlagIcon>
-              <use href={`${sprite}#icon-uk`}></use>
-            </FlagIcon>
-            English:
-          </LabelStyle>
-            <FieldStyle type="text" name="en" id = "uk"/>
-          <ErrMsgStyle name="en" component="div" />
-
-        <BtnWrapper>
+          <BtnWrapper>
             <FormBtn type="submit">Add</FormBtn>
             <FormBtn type="button" onClick={toggleModal}>
               Cancel
             </FormBtn>
-        </BtnWrapper>
+          </BtnWrapper>
         </FormStyle>
       </Formik>
     </AddWordModalContainer>

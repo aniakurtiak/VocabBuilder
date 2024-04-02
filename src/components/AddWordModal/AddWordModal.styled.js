@@ -5,12 +5,12 @@ export const AddWordModalContainer = styled.div`
   position: absolute;
   width: 342px;
   max-height: 100vh;
-  overflow: auto;
+  /* overflow: auto; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scalex(1);
   border-radius: 15px;
-  height: 621px;
+  /* height: 621px; */
   background: ${({ theme }) => theme.green};
   padding: 48px 16px;
 
@@ -78,19 +78,48 @@ export const FormStyle = styled(Form)`
   flex-direction: column;
 `;
 
+export const FormWrapper = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+`;
+
 export const LabelStyle = styled.label`
   display: flex;
   align-items: center;
+  gap: 4.5px;
   margin-bottom: 4px;
   font-weight: 500;
   font-size: 14px;
   color: ${({ theme }) => theme.white};
+
+  @media screen and (min-width: 768px) {
+    order: 2;
+    margin-bottom: 0;
+    gap: 8px;
+  }
 `;
 
 export const FlagIcon = styled.svg`
   width: 28px;
   height: 28px;
-  margin-right: 4.5px;
+
+  @media screen and (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const FieldStyle = styled(Field)`
@@ -115,6 +144,15 @@ export const FieldStyle = styled(Field)`
     outline: none;
     border-color: ${({ theme }) => theme.white};
   }
+
+  @media screen and (min-width: 768px) {
+    order: 1;
+    border: 1px solid rgba(252, 252, 252, 0.3);
+    padding: 16px 18px;
+    width: 354px;
+    height: 56px;
+    margin-bottom: 0px;
+  }
 `;
 
 export const ErrMsgStyle = styled(ErrorMessage)`
@@ -125,29 +163,41 @@ export const ErrMsgStyle = styled(ErrorMessage)`
   margin-top: -10px;
   margin-bottom: 16px;
 
+  @media screen and (min-width: 768px) {
+    /* order: 3; */
+  }
 `;
 
 export const BtnWrapper = styled.div`
   display: flex;
   gap: 8px;
+  margin-top: 16px;
+
+  @media screen and (min-width: 768px) {
+    gap: 10px;
+  }
 `;
 
-export const FormBtn = styled.button `
-border: 1px solid rgba(252, 252, 252, 0.4);
-border-radius: 30px;
-padding: 12px 45px;
-width: 159px;
-height: 48px;
-background: ${({ theme }) => theme.green};
-font-weight: 700;
-font-size: 16px;
-line-height: 1.5;
-color: ${({ theme }) => theme.white};
+export const FormBtn = styled.button`
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  border-radius: 30px;
+  padding: 12px 45px;
+  width: 159px;
+  height: 48px;
+  background: ${({ theme }) => theme.green};
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: ${({ theme }) => theme.white};
 
-&:hover {
-  background: ${({ theme }) => theme.white};
-color: ${({ theme }) => theme.black};
+  &:hover {
+    background: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.black};
+  }
 
+  @media screen and (min-width: 768px) {
+    width: 245px;
+    height: 56px;
   }
 `;
 
@@ -158,8 +208,8 @@ export const CategoriesWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     display: flex;
+    flex-direction: column;
     gap: 8px;
-    align-items: center;
   }
 `;
 
@@ -198,7 +248,9 @@ export const selectStyles = {
     },
 
     '@media screen and (min-width: 768px)': {
-      width: '164px',
+      width: '204px',
+    border: '1px solid  rgba(252, 252, 252, 0.3)',
+  
     },
   }),
 
@@ -267,7 +319,7 @@ export const RadioInput = styled.input`
   appearance: none;
   width: 18px;
   height: 18px;
-  border: 2px solid ${({ theme }) => theme.white};
+  border: 2px solid rgba(252, 252, 252, 0.2);
   border-radius: 50%;
   cursor: pointer;
 
@@ -291,7 +343,7 @@ export const RadioInput = styled.input`
   }
   @keyframes borderChange {
     from {
-      border: 2px solid ${({ theme }) => theme.white};
+      border: 2px solid rgba(252, 252, 252, 0.2);
     }
     to {
       border-color: ${({ theme }) => theme.white};
