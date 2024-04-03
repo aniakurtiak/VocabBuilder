@@ -162,7 +162,15 @@ export const ErrMsgStyle = styled(ErrorMessage)`
   color: ${({ theme }) => theme.white};
   margin-top: -10px;
   margin-bottom: 16px;
+`;
 
+export const ErrMsgCategories = styled(ErrorMessage)`
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.white};
+  margin-top: 10px;
+  margin-bottom: 16px;
 `;
 
 export const BtnWrapper = styled.div`
@@ -213,7 +221,7 @@ export const CategoriesWrapper = styled.div`
 `;
 
 export const StyledSelect = styled.select`
-    border: 1px solid #d1d5db;
+  border: 1px solid #d1d5db;
   border-radius: 15px;
   padding: 12px 24px;
   width: 311px;
@@ -226,27 +234,25 @@ export const StyledSelect = styled.select`
 
   &:hover {
     outline: none;
-    border-color: #d1d5db;
-    box-shadow: none;
+    border-color: ${({ theme }) => theme.white};
   }
 
   &:focus {
     outline: none;
-    border-color: #d1d5db;
-    box-shadow: none;
+    border-color: ${({ theme }) => theme.white};
   }
 
   &::after {
     content: '';
     position: absolute;
-    top: calc(50% - 3px); 
-    right: 16px; 
+    top: calc(50% - 3px);
+    right: 16px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 6px 6px 0; 
-    border-color: #fcfcfc transparent transparent; 
-    transform: translateY(-50%); 
+    border-width: 6px 6px 0;
+    border-color: #fcfcfc transparent transparent;
+    transform: translateY(-50%);
   }
 
   @media screen and (min-width: 768px) {
@@ -255,96 +261,47 @@ export const StyledSelect = styled.select`
   }
 `;
 
-export const Option = styled.option`
-  /* Styles for option */
-  background-color: ${({ isFocused }) => (isFocused ? '#85aa9f' : 'transparent')};
-  font-weight: 500;
-  line-height: 1.5;
+export const FieldSelect = styled(Field)`
+  & + ${StyledSelect} {
+    & option {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      color: rgba(18, 20, 23, 0.5);
+      border-radius: 15px;
+      padding: 12px 107px 12px 24px;
+      width: 311px;
+      height: 240px;
+      box-shadow: 0 4px 47px 0 rgba(18, 20, 23, 0.08);
+      background: #fff;
+      cursor: pointer;
+    }
 
-  &:hover {
-    background-color: #85aa9f;
+    & option:hover {
+      color: ${({ theme }) => theme.green};
+      background: #fff;
+
+    }
+    
+    & option:checked {
+      color: ${({ theme }) => theme.green};
+    }
   }
 `;
 
-
-export const selectStyles = {
-  input: (provided, state) => ({
-    ...provided,
-    margin: '0',
-    padding: '0',
-  }),
-
-  valueContainer: (provided, state) => ({
-    ...provided,
-    margin: '0',
-    padding: '0',
-  }),
-
-  control: (provided, state) => ({
-    ...provided,
-    border: '1px solid #d1d5db',
-    borderRadius: '15px',
-    padding: '12px 24px',
-    width: '311px',
-    height: '48px',
-    background: '#85aa9f',
-
-    '&:hover': {
-      outline: 'none',
-      borderColor: '#d1d5db',
-      boxShadow: 'none',
-    },
-
-    '&:focus-within': {
-      outline: 'none',
-      borderColor: '#d1d5db',
-      boxShadow: 'none',
-    },
-
-    '@media screen and (min-width: 768px)': {
-      width: '204px',
-    border: '1px solid  rgba(252, 252, 252, 0.3)',
-  
-    },
-  }),
-
-  dropdownIndicator: (provided, state) => ({
-    ...provided,
-    color: '#fcfcfc',
-    cursor: 'pointer',
-    padding: '0',
-    '& svg': {
-      width: '20px',
-      height: '20px',
-      strokeWidth: '0.02px',
-    },
-  }),
-
-  placeholder: (provided, state) => ({
-    ...provided,
-    color: '#fcfcfc',
-    fontSize: '16px',
-    fontStyle: 'normal',
-    fontWeight: '500',
-    lineHeight: '1.5',
-    padding: '0',
-  }),
-
-  option: (provided, state) => ({
-    ...provided,
-    backgroundColor: state.isFocused ? '#85aa9f' : 'transparent',
-    fontWeight: '500',
-    lineHeight: '1.5',
-    color: '#121417',
-  }),
-
-  singleValue: (provided, state) => ({
-    ...provided,
-    fontWeight: '500',
-    lineHeight: '1.5',
-    color: '#fcfcfc',
-  }),
-};
+export const Option = styled.option`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(18, 20, 23, 0.5);
+  border-radius: 15px;
+  padding: 12px 107px 12px 24px;
+  width: 311px;
+  height: 240px;
+  box-shadow: 0 4px 47px 0 rgba(18, 20, 23, 0.08);
+  background: #fff;
+  cursor: pointer;
+`;
 
 export const RadioBtnWrapper = styled.div`
   margin-top: 8px;
@@ -368,7 +325,7 @@ export const RadioLabel = styled.label`
   color: ${({ theme }) => theme.white};
 `;
 
-export const RadioField = styled(Field)`
+export const RadioInput = styled.input`
   position: relative;
   appearance: none;
   width: 18px;
@@ -404,4 +361,3 @@ export const RadioField = styled(Field)`
     }
   }
 `;
-

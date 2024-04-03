@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   AddWordModalContainer,
   BtnClose,
   BtnWrapper,
   CategoriesWrapper,
+  ErrMsgCategories,
   ErrMsgStyle,
   FieldStyle,
   FlagIcon,
@@ -14,18 +15,20 @@ import {
   LabelStyle,
   ModalTitle,
   ModaltText,
+  Option,
   RadioBtnWrapper,
-  RadioField,
+  RadioInput,
   RadioLabel,
   StyledSelect,
 } from './AddWordModal.styled';
 import sprite from '../../icons/sprites.svg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
   selectCategories,
 } from '../../redux/selectors';
+import { addWord } from '../../redux/words/operations';
 
 const validationSchema = Yup.object().shape({
   category: Yup.string().required('Category is required'),
@@ -43,11 +46,16 @@ const validationSchema = Yup.object().shape({
 
 export const AddWordModal = ({ toggleModal }) => {
   const categories = useSelector(selectCategories);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const [verbType, setVerbType] = useState('');
 
   const handleSubmit = values => {
-    // Send request to backend to create a word
-    console.log(values);
+    const dataToSend = { ...values };
+    if (values.category === 'verb') {
+      dataToSend.isIrregular = verbType === 'irregular';
+    }
+    dispatch(addWord(dataToSend));
+    console.log(dataToSend);
   };
 
   return (
@@ -65,39 +73,53 @@ export const AddWordModal = ({ toggleModal }) => {
 
       <Formik
         initialValues={{
-          category: '',
-          verbType: '',
           en: '',
           ua: '',
+          category: '',
+          // verbType: '',
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values }) => (
+        {({ values, setFieldValue }) => (
           <FormStyle>
             <CategoriesWrapper>
             <Field as={StyledSelect} name="category" id="category">
                 <option value="">Categories</option>
                 {categories &&
                   categories.map(category => (
-                    <option key={category.value} value={category.value}>
+                    <Option key={category.value} value={category.value}>
                       {category.value}
-                    </option>
+                    </Option>
                   ))}
               </Field>
-              <ErrorMessage name="category" component="div" />
+              <ErrMsgCategories name="category" component="div" />
 
               {values.category === 'Verb' && (
                 <RadioBtnWrapper>
                   <RadioLabel>
-                    <RadioField type="radio" name="verbType" value="regular" />
+                  <RadioInput
+                      type="radio"
+                      name="verbType"
+                      value="regular"
+                      checked={verbType === 'regular'}
+                      onChange={() => {
+                        setVerbType('regular');
+                        setFieldValue('isIrregular', false);
+                      }}
+                    />
                     Regular
                   </RadioLabel>
                   <RadioLabel>
-                    <RadioField
+                    <RadioInput
                       type="radio"
                       name="verbType"
                       value="irregular"
+                      checked={verbType === 'irregular'}
+                      onChange={() => {
+                        setVerbType('irregular');
+                        setFieldValue('isIrregular', true);
+                      }}
                     />
                     Irregular
                   </RadioLabel>

@@ -15,3 +15,5 @@ export const selectSelectedVerbType = state => state.filters.selectedVerbType;
 export const selectError = state => state.auth.error;
 
 export const selectIsLoading = state => state.auth.isLoading;
+
+export const selectWords = state => state.words.words;
