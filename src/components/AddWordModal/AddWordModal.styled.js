@@ -163,9 +163,6 @@ export const ErrMsgStyle = styled(ErrorMessage)`
   margin-top: -10px;
   margin-bottom: 16px;
 
-  @media screen and (min-width: 768px) {
-    /* order: 3; */
-  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -175,6 +172,7 @@ export const BtnWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     gap: 10px;
+    margin-top: 32px;
   }
 `;
 
@@ -205,6 +203,7 @@ export const FormBtn = styled.button`
 
 export const CategoriesWrapper = styled.div`
   margin-bottom: 32px;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -212,6 +211,61 @@ export const CategoriesWrapper = styled.div`
     gap: 8px;
   }
 `;
+
+export const SelectField = styled(Field)`
+    border: 1px solid #d1d5db;
+  border-radius: 15px;
+  padding: 12px 24px;
+  width: 311px;
+  height: 48px;
+  background: #85aa9f;
+  font-size: 16px;
+  color: #fcfcfc;
+  /* appearance: none; */
+  cursor: pointer;
+
+  &:hover {
+    outline: none;
+    border-color: #d1d5db;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #d1d5db;
+    box-shadow: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 3px); 
+    right: 16px; 
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0; 
+    border-color: #fcfcfc transparent transparent; 
+    transform: translateY(-50%); 
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 204px;
+    border: 1px solid rgba(252, 252, 252, 0.3);
+  }
+`;
+
+export const Option = styled.option`
+  /* Styles for option */
+  background-color: ${({ isFocused }) => (isFocused ? '#85aa9f' : 'transparent')};
+  font-weight: 500;
+  line-height: 1.5;
+
+  &:hover {
+    background-color: #85aa9f;
+  }
+`;
+
 
 export const selectStyles = {
   input: (provided, state) => ({
@@ -314,7 +368,7 @@ export const RadioLabel = styled.label`
   color: ${({ theme }) => theme.white};
 `;
 
-export const RadioInput = styled.input`
+export const RadioField = styled(Field)`
   position: relative;
   appearance: none;
   width: 18px;
@@ -350,3 +404,4 @@ export const RadioInput = styled.input`
     }
   }
 `;
+
