@@ -8,16 +8,27 @@ export const addWord = createAsyncThunk(
   'words/addWord',
   async (values, thunkAPI) => {
     try {
-      // Перетворення значень на малі літери перед відправкою
       const lowercaseValues = {
         ...values,
         category: values.category.toLowerCase(),
-        // Якщо isIrregular передається як булеве значення, додайте тут логіку для його перетворення
       };
-      
       const response = await axios.post('/words/create', lowercaseValues);
       console.log(response.data);
       return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+
+export const fetchOwnWords = createAsyncThunk(
+  'words/fetchOwnWords',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/words/own');
+      console.log(response.data);
+      return response.data.results;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

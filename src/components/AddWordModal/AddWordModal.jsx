@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AddWordModalContainer,
   BtnClose,
@@ -26,9 +26,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {
-  selectCategories,
+  selectCategories, selectWordsError,
 } from '../../redux/selectors';
 import { addWord } from '../../redux/words/operations';
+import toast from 'react-hot-toast';
+
 
 const validationSchema = Yup.object().shape({
   category: Yup.string().required('Category is required'),
@@ -44,19 +46,31 @@ const validationSchema = Yup.object().shape({
     .required('Ukrainian is required'),
 });
 
-export const AddWordModal = ({ toggleModal }) => {
+export const AddWordModal = ({ toggleModal, close }) => {
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
+  const error = useSelector(selectWordsError);
   const [verbType, setVerbType] = useState('');
 
   const handleSubmit = values => {
     const dataToSend = { ...values };
     if (values.category === 'verb') {
       dataToSend.isIrregular = verbType === 'irregular';
-    }
-    dispatch(addWord(dataToSend));
-    console.log(dataToSend);
+    } 
+    dispatch(addWord(dataToSend))
+      .then(() => {
+        close();
+      })
+      .catch(error => {
+        toast.error(error); 
+      });
   };
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
 
   return (
     <AddWordModalContainer>
@@ -76,7 +90,6 @@ export const AddWordModal = ({ toggleModal }) => {
           en: '',
           ua: '',
           category: '',
-          // verbType: '',
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}

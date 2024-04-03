@@ -20,7 +20,9 @@ export const Dashboard = () => {
     setIsOpen(prevState => !prevState);
   };
 
-
+  const close = () => {
+    setIsOpen(false);
+  };
 
   return (
     <DashboardContainer>
@@ -46,7 +48,7 @@ export const Dashboard = () => {
 
       {isOpen && (
         <Modal toggleModal={toggleModal}>
-          {<AddWordModal toggleModal={toggleModal} />}
+          {<AddWordModal toggleModal={toggleModal} close = {close} />}
         </Modal>
       )}
     </DashboardContainer>

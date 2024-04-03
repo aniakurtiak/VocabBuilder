@@ -17,3 +17,8 @@ export const selectError = state => state.auth.error;
 export const selectIsLoading = state => state.auth.isLoading;
 
 export const selectWords = state => state.words.words;
+
+export const selectWordsError = state => state.words.error;
+
+export const selectWordsIsLoading = state => state.words.isLoading; 
+
