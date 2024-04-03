@@ -17,7 +17,6 @@ import {
   RadioBtnWrapper,
   RadioField,
   RadioLabel,
-  SelectField,
   StyledSelect,
 } from './AddWordModal.styled';
 import sprite from '../../icons/sprites.svg';
