@@ -17,6 +17,8 @@ import {
   RadioBtnWrapper,
   RadioField,
   RadioLabel,
+  SelectField,
+  StyledSelect,
 } from './AddWordModal.styled';
 import sprite from '../../icons/sprites.svg';
 import { useSelector } from 'react-redux';
@@ -75,7 +77,7 @@ export const AddWordModal = ({ toggleModal }) => {
         {({ values }) => (
           <FormStyle>
             <CategoriesWrapper>
-              <Field as="select" name="category" id="category">
+            <Field as={StyledSelect} name="category" id="category">
                 <option value="">Categories</option>
                 {categories &&
                   categories.map(category => (
@@ -114,8 +116,8 @@ export const AddWordModal = ({ toggleModal }) => {
                 Ukrainian
               </LabelStyle>
                 <FieldStyle type="text" name="ua" id="ua" />
-                <ErrMsgStyle name="ua" component="div" />
             </InputWrapper>
+                <ErrMsgStyle name="ua" component="div" />
   
            <InputWrapper>
               <LabelStyle htmlFor="uk">
@@ -125,8 +127,8 @@ export const AddWordModal = ({ toggleModal }) => {
                 English
               </LabelStyle>
               <FieldStyle type="text" name="en" id="uk" />
-            <ErrMsgStyle name="en" component="div" />
            </InputWrapper>
+            <ErrMsgStyle name="en" component="div" />
   
         </FormWrapper>
 

@@ -212,7 +212,7 @@ export const CategoriesWrapper = styled.div`
   }
 `;
 
-export const SelectField = styled(Field)`
+export const StyledSelect = styled.select`
     border: 1px solid #d1d5db;
   border-radius: 15px;
   padding: 12px 24px;
