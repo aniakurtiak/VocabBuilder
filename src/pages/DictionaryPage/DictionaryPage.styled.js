@@ -5,6 +5,10 @@ export const DictionaryContainer = styled.div`
   padding-top: 32px;
   padding-left: 32px;
   padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 768px) {
     padding-top: 80px;

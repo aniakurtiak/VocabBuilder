@@ -18,19 +18,28 @@ export const WordsTable = () => {
             {
                 Header: 'Word',
                 accessor: 'en',
+                width: 82, 
             },
             {
                 Header: 'Translation',
                 accessor: 'ua',
+                width: 116, 
             },
             {
                 Header: 'Progress',
                 accessor: 'progress',
+                width: 95, 
             },
-            // {
-            //     Header: '',
-            //     accessor: 'progress',
-            // },
+            {
+                Header: '',
+                accessor: 'actions',
+                Cell: () => (
+                    <button>
+                        Add
+                    </button>
+                ),
+                width: 50, 
+            },
         ],
         []
     );
@@ -52,7 +61,7 @@ export const WordsTable = () => {
                     {headerGroups.map(headerGroup => (
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map(column => (
-                                <HeadRow {...column.getHeaderProps()}>{column.render('Header')}</HeadRow>
+                                <HeadRow {...column.getHeaderProps()} width={column.width}>{column.render('Header')}</HeadRow>
                             ))}
                         </tr>
                     ))}
