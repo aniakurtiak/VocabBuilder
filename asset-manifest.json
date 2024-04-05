@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.76e71dca.js",
+    "main.js": "/VocabBuilder/static/js/main.8e9c613f.js",
     "static/js/215.f65e0f29.chunk.js": "/VocabBuilder/static/js/215.f65e0f29.chunk.js",
     "static/js/977.cf1cfc88.chunk.js": "/VocabBuilder/static/js/977.cf1cfc88.chunk.js",
-    "static/js/192.aace59a7.chunk.js": "/VocabBuilder/static/js/192.aace59a7.chunk.js",
+    "static/js/88.13baaed9.chunk.js": "/VocabBuilder/static/js/88.13baaed9.chunk.js",
     "static/js/287.804559e6.chunk.js": "/VocabBuilder/static/js/287.804559e6.chunk.js",
     "static/js/405.36a92342.chunk.js": "/VocabBuilder/static/js/405.36a92342.chunk.js",
     "static/js/7.f2abf5c1.chunk.js": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js",
     "static/js/485.fe320330.chunk.js": "/VocabBuilder/static/js/485.fe320330.chunk.js",
     "static/js/358.9f9fb829.chunk.js": "/VocabBuilder/static/js/358.9f9fb829.chunk.js",
-    "static/js/854.98796cf2.chunk.js": "/VocabBuilder/static/js/854.98796cf2.chunk.js",
+    "static/js/854.9acb26bf.chunk.js": "/VocabBuilder/static/js/854.9acb26bf.chunk.js",
     "static/media/illustrationDesktop@2x.png": "/VocabBuilder/static/media/illustrationDesktop@2x.f9e8831c4824889bea0c.png",
     "static/media/illustrationTabMenu@2x.png": "/VocabBuilder/static/media/illustrationTabMenu@2x.a8e7856e0c39a46f1ca9.png",
     "static/media/SF-Pro-Display-Semibold.otf": "/VocabBuilder/static/media/SF-Pro-Display-Semibold.037dc63930459813f575.otf",
@@ -94,26 +94,26 @@
     "static/media/illustrationMob@2x.webp": "/VocabBuilder/static/media/illustrationMob@2x.2e612da2627d6dd04bab.webp",
     "static/media/illustrationTabMenu.webp": "/VocabBuilder/static/media/illustrationTabMenu.142ec9c8edfcaa456114.webp",
     "static/media/illustrationMobMenu.webp": "/VocabBuilder/static/media/illustrationMobMenu.4c920c31febe6b5bdb0f.webp",
+    "static/media/sprites.svg": "/VocabBuilder/static/media/sprites.739b91af239e230c9b0ff0a60c330733.svg",
     "static/media/illustrationMob.webp": "/VocabBuilder/static/media/illustrationMob.7dcfa31102df3fabf683.webp",
-    "static/media/sprites.svg": "/VocabBuilder/static/media/sprites.081c2cceb8145c110f4af5d8b43b2bf0.svg",
     "index.html": "/VocabBuilder/index.html",
     "static/media/vector.svg": "/VocabBuilder/static/media/vector.ed893f863e1429ff3e06ec12e3c1d587.svg",
     "static/media/burger-menu.svg": "/VocabBuilder/static/media/burger-menu.424592733778a4d52889214303e00fd1.svg",
     "static/media/search.svg": "/VocabBuilder/static/media/search.0c70c359be9f625367cb2a522feff44d.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.76e71dca.js.map": "/VocabBuilder/static/js/main.76e71dca.js.map",
+    "main.8e9c613f.js.map": "/VocabBuilder/static/js/main.8e9c613f.js.map",
     "215.f65e0f29.chunk.js.map": "/VocabBuilder/static/js/215.f65e0f29.chunk.js.map",
     "977.cf1cfc88.chunk.js.map": "/VocabBuilder/static/js/977.cf1cfc88.chunk.js.map",
-    "192.aace59a7.chunk.js.map": "/VocabBuilder/static/js/192.aace59a7.chunk.js.map",
+    "88.13baaed9.chunk.js.map": "/VocabBuilder/static/js/88.13baaed9.chunk.js.map",
     "287.804559e6.chunk.js.map": "/VocabBuilder/static/js/287.804559e6.chunk.js.map",
     "405.36a92342.chunk.js.map": "/VocabBuilder/static/js/405.36a92342.chunk.js.map",
     "7.f2abf5c1.chunk.js.map": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js.map",
     "485.fe320330.chunk.js.map": "/VocabBuilder/static/js/485.fe320330.chunk.js.map",
     "358.9f9fb829.chunk.js.map": "/VocabBuilder/static/js/358.9f9fb829.chunk.js.map",
-    "854.98796cf2.chunk.js.map": "/VocabBuilder/static/js/854.98796cf2.chunk.js.map"
+    "854.9acb26bf.chunk.js.map": "/VocabBuilder/static/js/854.9acb26bf.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.76e71dca.js"
+    "static/js/main.8e9c613f.js"
   ]
 }
