@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 export const WordsTableContainer = styled.div`
   margin-top: 32px;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 15px;
+    padding: 18px;
+    background: #fff;
+    margin-top: 28px;
+  }
 `;
 
 export const TableStyle = styled.table`
@@ -27,6 +34,10 @@ export const HeadRow = styled.th`
   font-size: 16px;
   width: ${({ width }) => width}px;
   padding: 16px 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const TableBody = styled.tbody`
@@ -35,17 +46,39 @@ export const TableBody = styled.tbody`
 
 export const TableRow = styled.td`
   font-size: 14px;
-  border-top: 1px solid #dbdbdb; 
-  border-right: 1px solid #dbdbdb; 
-  border-left: none; 
-  padding: 8px; 
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-left: none;
+  padding: 8px;
   &:first-child {
-    border-left: none; 
+    border-left: none;
   }
   &:last-child {
-    border-right: none; 
-  padding: 16px 10px 16px 14px;
-  white-space: pre-wrap;
-  background: ${({ theme }) => theme.white};
+    border-right: none;
+    padding: 16px 10px 16px 14px;
+    white-space: pre-wrap;
+    background: ${({ theme }) => theme.white};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FlagIcon = styled.svg`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 28px;
+    height: 28px;
   }
 `;
