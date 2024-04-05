@@ -4,7 +4,7 @@ import { selectWords } from '../../redux/selectors';
 import { fetchOwnWords } from '../../redux/words/operations';
 import { useTable } from 'react-table';
 import {
-    FlagIcon,
+  FlagIcon,
   HeadRow,
   IconContainer,
   TableBody,
@@ -14,6 +14,7 @@ import {
   WordsTableContainer,
 } from './WordsTable.styled';
 import sprite from '../../icons/sprites.svg';
+import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
 
 export const WordsTable = () => {
   const words = useSelector(selectWords);
@@ -21,7 +22,7 @@ export const WordsTable = () => {
 
   const IconUk = ({ text }) => (
     <IconContainer>
-      <span>{text}</span> 
+      <span>{text}</span>
       <FlagIcon>
         <use href={`${sprite}#icon-uk`}>z</use>
       </FlagIcon>
@@ -30,7 +31,7 @@ export const WordsTable = () => {
 
   const IconUa = ({ text }) => (
     <IconContainer>
-      <span>{text}</span> 
+      <span>{text}</span>
       <FlagIcon>
         <use href={`${sprite}#icon-ua`}>z</use>
       </FlagIcon>
@@ -49,7 +50,7 @@ export const WordsTable = () => {
         width: 82,
       },
       {
-        Header:  () => <IconUa text='Translation'/>,
+        Header: () => <IconUa text="Translation" />,
         accessor: 'ua',
         width: 116,
       },
@@ -61,8 +62,10 @@ export const WordsTable = () => {
       {
         Header: '',
         accessor: 'actions',
-        Cell: () => <button>Add</button>,
+        Cell: () => <ActionsPopover />,
         width: 50,
+        style: {display: 'flex', justifyContent: 'center', alignItems: 'center'},
+
       },
     ],
     []

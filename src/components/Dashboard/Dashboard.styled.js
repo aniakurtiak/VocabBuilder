@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const DashboardContainer = styled.div`
   @media screen and (min-width: 1440px) {
+    width: 1240px;
     display: flex;
     justify-content: space-between;
     align-items: center;

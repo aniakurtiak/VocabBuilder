@@ -9,6 +9,10 @@ export const WordsTableContainer = styled.div`
     background: #fff;
     margin-top: 28px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 1240px;
+  }
 `;
 
 export const TableStyle = styled.table`
@@ -82,3 +86,4 @@ export const FlagIcon = styled.svg`
     height: 28px;
   }
 `;
+

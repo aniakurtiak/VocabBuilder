@@ -16,21 +16,6 @@ export default function Layout() {
     setIsOpen(prevState => !prevState);
   };
 
-  // function onClickBurgerMenu() {
-  //   setRegisterModal(false);
-  //   setLoginModal(true);
-  //   toggleModal();
-  // }
-  // function onClickRegister() {
-  //   setLoginModal(false);
-  //   setRegisterModal(true);
-  //   toggleModal();
-  // }
-
-  // const close = () => {
-  //   setIsOpen(false);
-  // };
-
   return (
     <Container>
       <HeaderStyle> {isLoggedIn ? <Navigation toggleModal={toggleModal} /> : <Logo />}</HeaderStyle>
