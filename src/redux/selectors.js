@@ -20,6 +20,6 @@ export const selectWords = state => state.words.words;
 
 export const selectWordsError = state => state.words.error;
 
-export const selectWordsIsLoading = state => state.words.isLoading; 
+export const selectWordsIsLoading = state => state.words.isLoading;
 
 export const selectSelectedWord = state => state.words.selectedWord;

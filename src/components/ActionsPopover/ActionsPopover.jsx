@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Popover from 'react-popover';
 import {
   ActionsBtn,
@@ -8,28 +8,19 @@ import {
   PopoverContainer,
 } from './ActionsPopover.styled';
 import sprite from '../../icons/sprites.svg';
-// import { setSelectedWord } from '../../redux/words/wordsSlice';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectSelectedWord } from '../../redux/selectors';
+import { setSelectedWord } from '../../redux/words/wordsSlice';
+import { useDispatch } from 'react-redux';
 
 export const ActionsPopover = ({ word, onClickEditWord }) => {
-  console.log(word);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedWord, setSelectedWord] = useState(null); 
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//   const selectedWord = useSelector(selectSelectedWord);
 
 const handleEditClick = (word) => {
-    setSelectedWord(word);
-    console.log(selectedWord);
+    dispatch(setSelectedWord(word));
     onClickEditWord();
   };
-
-  useEffect(() => {
-    console.log(selectedWord);
-  }, [selectedWord]);
 
   const togglePopover = () => {
     setIsOpen(!isOpen);
@@ -41,7 +32,7 @@ const handleEditClick = (word) => {
         isOpen={isOpen}
         body={
           <ActionsPopoverContainer>
-            <ActionsBtn onClick={handleEditClick}>
+            <ActionsBtn onClick={() => {handleEditClick(word)}}>
               <Icon>
                 <use href={`${sprite}#icon-edit`}></use>
               </Icon>

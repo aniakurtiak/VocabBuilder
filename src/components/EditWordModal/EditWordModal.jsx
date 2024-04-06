@@ -1,11 +1,7 @@
 // import React, { useEffect, useState } from 'react';
 // import toast from 'react-hot-toast';
 // import { useDispatch } from 'react-redux';
-// import {
-//   selectCategories,
-//   selectSelectedWord,
-//   selectWordsError,
-// } from '../../redux/selectors';
+import { selectSelectedWord } from '../../redux/selectors';
 
 import * as Yup from 'yup';
 import {
@@ -23,6 +19,7 @@ import {
 } from './EditWordModal.styled';
 import sprite from '../../icons/sprites.svg';
 import { Formik } from 'formik';
+import { useSelector } from 'react-redux';
 
 const validationSchema = Yup.object().shape({
   category: Yup.string().required('Category is required'),
@@ -38,9 +35,9 @@ const validationSchema = Yup.object().shape({
     .required('Ukrainian is required'),
 });
 
-export const EditWordModal = ({ toggleModal, selectedWord }) => {
-  // const dispatch = useDispatch();
-  
+export const EditWordModal = ({ toggleModal }) => {
+  const selectedWord = useSelector(selectSelectedWord);
+
   const handleSubmit = values => {
     console.log(values);
   };
@@ -57,7 +54,7 @@ export const EditWordModal = ({ toggleModal, selectedWord }) => {
         initialValues={{
           en: selectedWord.en,
           ua: selectedWord.ua,
-          category: selectedWord.category,
+          // category: selectedWord.category,
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
