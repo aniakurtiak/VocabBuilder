@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectWords } from '../../redux/selectors';
+import {  selectWords } from '../../redux/selectors';
 import { fetchOwnWords } from '../../redux/words/operations';
 import { useTable } from 'react-table';
 import {
@@ -15,10 +15,13 @@ import {
 } from './WordsTable.styled';
 import sprite from '../../icons/sprites.svg';
 import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
+// import { setSelectedWord } from '../../redux/words/wordsSlice';
 
-export const WordsTable = () => {
+
+export const WordsTable = ({onClickEditWord}) => {
   const words = useSelector(selectWords);
   const dispatch = useDispatch();
+
 
   const IconUk = ({ text }) => (
     <IconContainer>
@@ -62,13 +65,11 @@ export const WordsTable = () => {
       {
         Header: '',
         accessor: 'actions',
-        Cell: () => <ActionsPopover />,
+        Cell: ({ row }) => <ActionsPopover word={row.original} onClickEditWord={onClickEditWord} />,
         width: 50,
-        style: {display: 'flex', justifyContent: 'center', alignItems: 'center'},
-
-      },
+      }
     ],
-    []
+    [onClickEditWord]
   );
 
   const data = React.useMemo(() => words || [], [words]);
@@ -97,7 +98,7 @@ export const WordsTable = () => {
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => (
                   <TableRow {...cell.getCellProps()}>
-                    {cell.render('Cell')}
+                  {cell.render('Cell', { word: row.original })} 
                   </TableRow>
                 ))}
               </tr>

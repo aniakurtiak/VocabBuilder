@@ -13,11 +13,17 @@ const initialState = {
   words: [],
   isLoading: false,
   error: null,
+  selectedWord: null,
 };
 
 const wordsSlice = createSlice({
   name: 'words',
   initialState,
+  reducers: {
+    setSelectedWord(state, action) {
+      state.selectedWord = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(addWord.pending, handlePending)
@@ -37,4 +43,6 @@ const wordsSlice = createSlice({
   },
 });
 
+export const { setSelectedWord } = wordsSlice.actions;
 export const wordsReducer = wordsSlice.reducer;
+
