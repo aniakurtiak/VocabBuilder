@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.b12168b0.js",
+    "main.js": "/VocabBuilder/static/js/main.15ecd2e2.js",
     "static/js/215.f65e0f29.chunk.js": "/VocabBuilder/static/js/215.f65e0f29.chunk.js",
     "static/js/977.cf1cfc88.chunk.js": "/VocabBuilder/static/js/977.cf1cfc88.chunk.js",
-    "static/js/901.b84e6ed2.chunk.js": "/VocabBuilder/static/js/901.b84e6ed2.chunk.js",
+    "static/js/901.0723c932.chunk.js": "/VocabBuilder/static/js/901.0723c932.chunk.js",
     "static/js/287.35f9521c.chunk.js": "/VocabBuilder/static/js/287.35f9521c.chunk.js",
     "static/js/405.36a92342.chunk.js": "/VocabBuilder/static/js/405.36a92342.chunk.js",
     "static/js/7.f2abf5c1.chunk.js": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js",
@@ -100,10 +100,10 @@
     "static/media/burger-menu.svg": "/VocabBuilder/static/media/burger-menu.424592733778a4d52889214303e00fd1.svg",
     "static/media/search.svg": "/VocabBuilder/static/media/search.0c70c359be9f625367cb2a522feff44d.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.b12168b0.js.map": "/VocabBuilder/static/js/main.b12168b0.js.map",
+    "main.15ecd2e2.js.map": "/VocabBuilder/static/js/main.15ecd2e2.js.map",
     "215.f65e0f29.chunk.js.map": "/VocabBuilder/static/js/215.f65e0f29.chunk.js.map",
     "977.cf1cfc88.chunk.js.map": "/VocabBuilder/static/js/977.cf1cfc88.chunk.js.map",
-    "901.b84e6ed2.chunk.js.map": "/VocabBuilder/static/js/901.b84e6ed2.chunk.js.map",
+    "901.0723c932.chunk.js.map": "/VocabBuilder/static/js/901.0723c932.chunk.js.map",
     "287.35f9521c.chunk.js.map": "/VocabBuilder/static/js/287.35f9521c.chunk.js.map",
     "405.36a92342.chunk.js.map": "/VocabBuilder/static/js/405.36a92342.chunk.js.map",
     "7.f2abf5c1.chunk.js.map": "/VocabBuilder/static/js/7.f2abf5c1.chunk.js.map",
@@ -112,6 +112,6 @@
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.b12168b0.js"
+    "static/js/main.15ecd2e2.js"
   ]
 }
