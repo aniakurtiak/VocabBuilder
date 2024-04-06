@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {  selectWords } from '../../redux/selectors';
-import { editWord, fetchOwnWords } from '../../redux/words/operations';
+import { fetchOwnWords } from '../../redux/words/operations';
 import { useTable } from 'react-table';
 import {
   FlagIcon,

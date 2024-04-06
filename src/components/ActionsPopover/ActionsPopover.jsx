@@ -9,8 +9,7 @@ import {
 } from './ActionsPopover.styled';
 import sprite from '../../icons/sprites.svg';
 import { setSelectedWord } from '../../redux/words/wordsSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectSelectedWord } from '../../redux/selectors';
+import { useDispatch } from 'react-redux';
 import { deleteWord, fetchOwnWords } from '../../redux/words/operations';
 import toast from 'react-hot-toast';
 
