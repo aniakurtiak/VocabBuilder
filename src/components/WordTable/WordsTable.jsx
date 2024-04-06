@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {  selectWords } from '../../redux/selectors';
-import { fetchOwnWords } from '../../redux/words/operations';
+import { editWord, fetchOwnWords } from '../../redux/words/operations';
 import { useTable } from 'react-table';
 import {
   FlagIcon,
@@ -15,8 +15,6 @@ import {
 } from './WordsTable.styled';
 import sprite from '../../icons/sprites.svg';
 import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
-// import { setSelectedWord } from '../../redux/words/wordsSlice';
-
 
 export const WordsTable = ({onClickEditWord}) => {
   const words = useSelector(selectWords);
@@ -44,7 +42,7 @@ export const WordsTable = ({onClickEditWord}) => {
   useEffect(() => {
     dispatch(fetchOwnWords());
   }, [dispatch]);
-
+  
   const columns = React.useMemo(
     () => [
       {

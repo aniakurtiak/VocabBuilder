@@ -9,18 +9,34 @@ import {
 } from './ActionsPopover.styled';
 import sprite from '../../icons/sprites.svg';
 import { setSelectedWord } from '../../redux/words/wordsSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSelectedWord } from '../../redux/selectors';
+import { deleteWord, fetchOwnWords } from '../../redux/words/operations';
+import toast from 'react-hot-toast';
+
 
 export const ActionsPopover = ({ word, onClickEditWord }) => {
-
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
 
 
-const handleEditClick = (word) => {
+  const handleEditClick = word => {
     dispatch(setSelectedWord(word));
     onClickEditWord();
   };
+
+
+  const handleDeleteClick = (word) => {
+    dispatch(deleteWord(word._id))
+    .unwrap()
+    .then(() => {
+      toast.success('This word was deleted');
+      dispatch(fetchOwnWords());
+    })
+    .catch(error => {
+      toast.error(error);
+    });
+  }
 
   const togglePopover = () => {
     setIsOpen(!isOpen);
@@ -32,13 +48,17 @@ const handleEditClick = (word) => {
         isOpen={isOpen}
         body={
           <ActionsPopoverContainer>
-            <ActionsBtn onClick={() => {handleEditClick(word)}}>
+            <ActionsBtn
+              onClick={() => {
+                handleEditClick(word);
+              }}
+            >
               <Icon>
                 <use href={`${sprite}#icon-edit`}></use>
               </Icon>
               Edit
             </ActionsBtn>
-            <ActionsBtn>
+            <ActionsBtn onClick={()=> {handleDeleteClick(word)}}>
               <Icon>
                 <use href={`${sprite}#icon-trash`}></use>
               </Icon>

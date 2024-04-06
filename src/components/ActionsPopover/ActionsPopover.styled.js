@@ -40,6 +40,11 @@ export const ActionsBtn = styled.button`
     justify-content: center;
   gap: 8px;
 
+  &:hover {
+    color: ${({ theme }) => theme.black};
+    scale: 1.1;
+  }
+
    
 
     @media screen and (min-width: 768px) {

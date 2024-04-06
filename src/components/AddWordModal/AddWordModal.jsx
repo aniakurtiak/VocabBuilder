@@ -28,7 +28,7 @@ import * as Yup from 'yup';
 import {
   selectCategories, selectWordsError,
 } from '../../redux/selectors';
-import { addWord } from '../../redux/words/operations';
+import { addWord, fetchOwnWords } from '../../redux/words/operations';
 import toast from 'react-hot-toast';
 
 
@@ -58,7 +58,9 @@ export const AddWordModal = ({ toggleModal, close }) => {
       dataToSend.isIrregular = verbType === 'irregular';
     } 
     dispatch(addWord(dataToSend))
+    .unwrap()
       .then(() => {
+        dispatch(fetchOwnWords());
         close();
       })
       .catch(error => {

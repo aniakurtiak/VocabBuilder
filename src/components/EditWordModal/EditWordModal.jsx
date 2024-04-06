@@ -1,8 +1,6 @@
-// import React, { useEffect, useState } from 'react';
-// import toast from 'react-hot-toast';
-// import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import { selectSelectedWord } from '../../redux/selectors';
-
 import * as Yup from 'yup';
 import {
   AddWordModalContainer,
@@ -20,13 +18,9 @@ import {
 import sprite from '../../icons/sprites.svg';
 import { Formik } from 'formik';
 import { useSelector } from 'react-redux';
+import { editWord, fetchOwnWords } from '../../redux/words/operations';
 
 const validationSchema = Yup.object().shape({
-  category: Yup.string().required('Category is required'),
-  verbType: Yup.string().when('category', {
-    is: 'verb',
-    then: Yup.string().required('Verb type is required'),
-  }),
   en: Yup.string()
     .matches(/\b[A-Za-z'-]+(?:\s+[A-Za-z'-]+)*\b/, 'Invalid English input')
     .required('English is required'),
@@ -37,10 +31,29 @@ const validationSchema = Yup.object().shape({
 
 export const EditWordModal = ({ toggleModal }) => {
   const selectedWord = useSelector(selectSelectedWord);
+  const dispatch = useDispatch();
+
+  const { _id, category } = selectedWord;
 
   const handleSubmit = values => {
-    console.log(values);
+    let updatedValues = { ...values, category, id:_id};
+    if (category === 'verb') {
+      updatedValues = { ...updatedValues, isIrregular: true };
+    }
+    dispatch(editWord(updatedValues))
+      .unwrap()
+      .then(() => {
+        toast.success('Word updated successfully');
+        dispatch(fetchOwnWords());
+        toggleModal();
+      })
+      .catch(error => {
+        toast.error(error);
+      });
+
   };
+  
+  
 
   return (
     <AddWordModalContainer>
@@ -54,12 +67,11 @@ export const EditWordModal = ({ toggleModal }) => {
         initialValues={{
           en: selectedWord.en,
           ua: selectedWord.ua,
-          // category: selectedWord.category,
         }}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values }) => (
+        {({ values, handleSubmit }) => (
           <FormStyle>
             <FormWrapper>
               <InputWrapper>
