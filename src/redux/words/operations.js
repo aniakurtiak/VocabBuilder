@@ -31,6 +31,19 @@ export const fetchOwnWords = createAsyncThunk(
   }
 );
 
+export const fetchAllWords = createAsyncThunk(
+  'words/fetchAllWords',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get('/words/all');
+      console.log(response.data.results);
+      return response.data.results;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 export const deleteWord = createAsyncThunk(
   'words/deleteWord',
   async (_id, thunkAPI) => {

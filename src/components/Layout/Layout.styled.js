@@ -30,3 +30,18 @@ export const HeaderStyle = styled.header`
   }
 `
 
+export const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FlagIcon = styled.svg`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 28px;
+    height: 28px;
+  }
+`;

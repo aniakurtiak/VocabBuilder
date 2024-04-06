@@ -1,74 +1,20 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import {  selectWords } from '../../redux/selectors';
-import { fetchOwnWords } from '../../redux/words/operations';
 import { useTable } from 'react-table';
 import {
-  FlagIcon,
   HeadRow,
-  IconContainer,
   TableBody,
   TableHead,
   TableRow,
   TableStyle,
   WordsTableContainer,
 } from './WordsTable.styled';
-import sprite from '../../icons/sprites.svg';
-import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
+import React from 'react';
 
-export const WordsTable = ({onClickEditWord}) => {
+
+
+export const WordsTable = ({onClickEditWord , columns}) => {
   const words = useSelector(selectWords);
-  const dispatch = useDispatch();
-
-
-  const IconUk = ({ text }) => (
-    <IconContainer>
-      <span>{text}</span>
-      <FlagIcon>
-        <use href={`${sprite}#icon-uk`}>z</use>
-      </FlagIcon>
-    </IconContainer>
-  );
-
-  const IconUa = ({ text }) => (
-    <IconContainer>
-      <span>{text}</span>
-      <FlagIcon>
-        <use href={`${sprite}#icon-ua`}>z</use>
-      </FlagIcon>
-    </IconContainer>
-  );
-
-  useEffect(() => {
-    dispatch(fetchOwnWords());
-  }, [dispatch]);
-  
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: () => <IconUk text="Word" />,
-        accessor: 'en',
-        width: 82,
-      },
-      {
-        Header: () => <IconUa text="Translation" />,
-        accessor: 'ua',
-        width: 116,
-      },
-      {
-        Header: 'Progress',
-        accessor: 'progress',
-        width: 95,
-      },
-      {
-        Header: '',
-        accessor: 'actions',
-        Cell: ({ row }) => <ActionsPopover word={row.original} onClickEditWord={onClickEditWord} />,
-        width: 50,
-      }
-    ],
-    [onClickEditWord]
-  );
 
   const data = React.useMemo(() => words || [], [words]);
 
