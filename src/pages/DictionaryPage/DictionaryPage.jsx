@@ -9,8 +9,7 @@ import sprite from '../../icons/sprites.svg';
 import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
 import { useDispatch } from 'react-redux';
 import { fetchOwnWords } from '../../redux/words/operations';
-import { IconContainer } from 'components/Layout/Layout.styled';
-import { FlagIcon } from 'components/AddWordModal/AddWordModal.styled';
+import { FlagIcon, IconContainer } from 'components/Layout/Layout.styled';
 
 const DictionaryPage = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -8,6 +8,7 @@ export const WordsTableContainer = styled.div`
     padding: 18px;
     background: #fff;
     margin-top: 28px;
+    width: 704px;
   }
 
   @media screen and (min-width: 1440px) {

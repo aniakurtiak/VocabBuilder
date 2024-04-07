@@ -19,6 +19,19 @@ export const addWord = createAsyncThunk(
   }
 );
 
+export const addWordFromOtherUser = createAsyncThunk(
+  'words/addWordFromOtherUser',
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.post(`/words/add/${id}`, id);
+      console.log(response.data.results);
+      return response.data.results;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
 export const fetchOwnWords = createAsyncThunk(
   'words/fetchOwnWords',
   async (_, thunkAPI) => {
