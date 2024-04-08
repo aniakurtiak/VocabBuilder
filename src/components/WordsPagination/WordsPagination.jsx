@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { PaginationContainer, ReactPaginateStyle } from './WordsPagination.styled';
+import { PaginateBtn, PaginationContainer, ReactPaginateStyle } from './WordsPagination.styled';
 import { selectWords } from '../../redux/selectors';
 
 export const WordsPagination = ({ pageCount, handlePageClick }) => {
@@ -9,9 +9,9 @@ export const WordsPagination = ({ pageCount, handlePageClick }) => {
 
   return (
     <PaginationContainer>
-      <button onClick={() => handlePageClick(0)} disabled={currentPage === 0}>
+      <PaginateBtn onClick={() => handlePageClick(0)} disabled={currentPage === 0}>
         {'<<'}
-      </button>
+      </PaginateBtn>
       <ReactPaginateStyle
         pageCount={pageCount}
         nextLabel=">"
@@ -23,13 +23,19 @@ export const WordsPagination = ({ pageCount, handlePageClick }) => {
         containerClassName="pagination"
         activeClassName="active"
         renderOnZeroPageCount={null}
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        previousLinkClassName="page-link"
+        nextLinkClassName="page-link"
+        breakLinkClassName="page-link"
+
       />
-      <button
+      <PaginateBtn
         onClick={() => handlePageClick(pageCount - 1)}
         disabled={currentPage === pageCount - 1}
       >
         {'>>'}
-      </button>
+      </PaginateBtn>
     </PaginationContainer>
   );
 };
