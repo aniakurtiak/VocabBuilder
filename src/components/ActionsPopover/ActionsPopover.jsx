@@ -26,11 +26,12 @@ export const ActionsPopover = ({ word, onClickEditWord }) => {
 
 
   const handleDeleteClick = (word) => {
+    console.log(word._id);
     dispatch(deleteWord(word._id))
     .unwrap()
     .then(() => {
       toast.success('This word was deleted');
-      dispatch(fetchOwnWords());
+      dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
     })
     .catch(error => {
       toast.error(error);

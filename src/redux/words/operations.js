@@ -12,7 +12,8 @@ export const addWord = createAsyncThunk(
         category: values.category.toLowerCase(),
       };
       const response = await axios.post('/words/create', lowercaseValues);
-      return response.data.results;
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
@@ -24,8 +25,8 @@ export const addWordFromOtherUser = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.post(`/words/add/${id}`, id);
-      console.log(response.data.results);
-      return response.data.results;
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
@@ -34,9 +35,9 @@ export const addWordFromOtherUser = createAsyncThunk(
 
 export const fetchOwnWords = createAsyncThunk(
   'words/fetchOwnWords',
-  async (_, thunkAPI) => {
+  async ({ page, perPage }, thunkAPI) => {
     try {
-      const response = await axios.get('/words/own');
+      const response = await axios.get(`/words/own?page=${page}&perPage=${perPage}`);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -62,7 +63,7 @@ export const deleteWord = createAsyncThunk(
   async (_id, thunkAPI) => {
     try {
       const response = await axios.delete(`/words/delete/${_id}`);
-      return response.data.results;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }

@@ -5,6 +5,7 @@ export const RecommendContainer = styled.div`
   padding-top: 32px;
   padding-left: 32px;
   padding-right: 32px;
+  padding-bottom: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;

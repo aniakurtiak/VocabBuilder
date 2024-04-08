@@ -44,7 +44,7 @@ export const EditWordModal = ({ toggleModal }) => {
       .unwrap()
       .then(() => {
         toast.success('Word updated successfully');
-        dispatch(fetchOwnWords());
+        dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
         toggleModal();
       })
       .catch(error => {

@@ -10,12 +10,17 @@ import { ActionsPopover } from 'components/ActionsPopover/ActionsPopover';
 import { useDispatch } from 'react-redux';
 import { fetchOwnWords } from '../../redux/words/operations';
 import { FlagIcon, IconContainer } from 'components/Layout/Layout.styled';
+import { WordsPagination } from 'components/WordsPagination/WordsPagination';
+import { useSelector } from 'react-redux';
+import { selectWords } from '../../redux/selectors';
 
 const DictionaryPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [addWordModal, setAddWordModal] = useState(false);
   const [editWordModal, setEditWordModal] = useState(false);
   const dispatch = useDispatch();
+  const words = useSelector(selectWords);
+  const totalPages = words.totalPages;
 
   const toggleModal = useCallback(() => {
     setIsOpen(prevState => !prevState);
@@ -35,6 +40,11 @@ const DictionaryPage = () => {
 
   const close = () => {
     setIsOpen(false);
+  };
+
+  const perPage = 7;
+  const handlePageClick = selected => {
+    dispatch(fetchOwnWords({ page: selected + 1, perPage }));
   };
 
   const IconUk = ({ text }) => (
@@ -83,7 +93,7 @@ const DictionaryPage = () => {
   );
 
   useEffect(() => {
-    dispatch(fetchOwnWords());
+    dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
   }, [dispatch]);
 
 
@@ -91,6 +101,8 @@ const DictionaryPage = () => {
     <DictionaryContainer>
       <Dashboard onClickAddWord={onClickAddWord}/>
       <WordsTable columns = {columns}/>
+      <WordsPagination pageCount={totalPages}  handlePageClick={({ selected }) => handlePageClick(selected)}/>
+
 
       {isOpen && (
         <Modal toggleModal={toggleModal} >

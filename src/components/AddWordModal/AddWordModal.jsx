@@ -60,7 +60,7 @@ export const AddWordModal = ({ toggleModal, close }) => {
     dispatch(addWord(dataToSend))
     .unwrap()
       .then(() => {
-        dispatch(fetchOwnWords());
+        dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
         close();
       })
       .catch(error => {

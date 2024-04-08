@@ -21,6 +21,7 @@ const RecommendPage = () => {
   const dispatch = useDispatch();
   const words = useSelector(selectWords);
   const totalPages = words.totalPages;
+  console.log(totalPages);
 
   const handleAddToDictionary = (word) => {
     console.log(word._id);
@@ -28,13 +29,17 @@ const RecommendPage = () => {
     .unwrap()
       .then(() => {
         toast.success('Word added successfully');
-    dispatch(fetchAllWords());
+    dispatch(fetchAllWords({ page: 1, perPage: 10 }));
   })
   .catch(error => {
     toast.error(error);
   });
   }
 
+  const perPage = 7;
+  const handlePageClick = selected => {
+    dispatch(fetchAllWords({ page: selected + 1, perPage }));
+  };
 
   const IconUk = ({ text }) => (
     <IconContainer>
@@ -93,14 +98,14 @@ const RecommendPage = () => {
 
 
   useEffect(() => {
-    dispatch(fetchAllWords({ page: 1, perPage: 10 })); // Загрузка першої сторінки при завантаженні компонента
+    dispatch(fetchAllWords({ page: 1, perPage: 10 }));
   }, [dispatch]);
 
   return (
     <RecommendContainer>
       <Dashboard />
       <WordsTable columns={columns} />
-      <WordsPagination pageCount={totalPages} />
+      <WordsPagination pageCount={totalPages}  handlePageClick={({ selected }) => handlePageClick(selected)}/>
     </RecommendContainer>
   );
 };
