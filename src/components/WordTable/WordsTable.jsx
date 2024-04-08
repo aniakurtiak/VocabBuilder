@@ -16,7 +16,7 @@ import React from 'react';
 export const WordsTable = ({onClickEditWord , columns}) => {
   const words = useSelector(selectWords);
 
-  const data = React.useMemo(() => words || [], [words]);
+  const data = React.useMemo(() => words.results || [], [words.results]);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });

@@ -13,9 +13,14 @@ import { useDispatch } from 'react-redux';
 import { addWordFromOtherUser, fetchAllWords } from '../../redux/words/operations';
 import { WordsTable } from 'components/WordTable/WordsTable';
 import toast from 'react-hot-toast';
+import { WordsPagination } from 'components/WordsPagination/WordsPagination';
+import { useSelector } from 'react-redux';
+import { selectWords } from '../../redux/selectors';
 
 const RecommendPage = () => {
   const dispatch = useDispatch();
+  const words = useSelector(selectWords);
+  const totalPages = words.totalPages;
 
   const handleAddToDictionary = (word) => {
     console.log(word._id);
@@ -86,14 +91,16 @@ const RecommendPage = () => {
     []
   );
 
+
   useEffect(() => {
-    dispatch(fetchAllWords());
+    dispatch(fetchAllWords({ page: 1, perPage: 10 })); // Загрузка першої сторінки при завантаженні компонента
   }, [dispatch]);
 
   return (
     <RecommendContainer>
       <Dashboard />
       <WordsTable columns={columns} />
+      <WordsPagination pageCount={totalPages} />
     </RecommendContainer>
   );
 };

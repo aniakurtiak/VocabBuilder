@@ -37,20 +37,20 @@ export const fetchOwnWords = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/words/own');
-      return response.data.results;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
 );
 
+
 export const fetchAllWords = createAsyncThunk(
   'words/fetchAllWords',
-  async (_, thunkAPI) => {
+  async ({ page, perPage }, thunkAPI) => {
     try {
-      const response = await axios.get('/words/all');
-      console.log(response.data.results);
-      return response.data.results;
+      const response = await axios.get(`/words/all?page=${page}&perPage=${perPage}`);
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
