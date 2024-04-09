@@ -78,3 +78,80 @@ export const WrapforUk = styled.div`
 font-size: 14px;
 justify-content: flex-end;
 `;
+
+export const BtnContainer = styled.div`
+margin-top: 116px;
+   display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 151px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 80px;
+  }
+  `;
+
+  export const BtnSave = styled.button`
+  background: ${({ theme }) => theme.green};
+  color: ${({ theme }) => theme.white};
+  border-radius: 30px;
+  padding: 16px;
+  width: 343px;
+  height: 56px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+
+  &:hover {
+    background: #a5c0b8;
+    color: ${({ theme }) => theme.white};
+  }
+
+@media screen and (min-width: 768px) {
+    width: 203px;
+}
+
+    @media screen and (min-width: 1440px) {
+padding: 14px;
+width: 215px;
+    }
+`;
+
+export const BtnCancel = styled.button`
+  font-weight: 700;
+  font-size: 16px;
+  color: rgba(18, 20, 23, 0.5);
+  text-align: center;
+  background: none;
+
+  &:hover {
+    color: ${({ theme }) => theme.black};
+  }
+
+  @media screen and (min-width: 768px) {
+    border: 1px solid ${({ theme }) => theme.green};
+    border-radius: 30px;
+    padding: 14px;
+    width: 203px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.56;
+    color: ${({ theme }) => theme.green};
+
+    &:hover {
+      background: ${({ theme }) => theme.green};
+      color: ${({ theme }) => theme.white};
+    }
+  }
+`;
+

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BtnNext, Container, InputStyle, TaskItem, TrainingListContainer, WrapforUk, Wrapper } from './TrainingCard.styled'
+import { BtnNext, Container, InputStyle, TaskItem, Text, TrainingListContainer, WrapforUk, Wrapper } from './TrainingCard.styled'
 import { IconSvg } from 'components/Dashboard/Dashboard.styled'
 import sprite from '../../icons/sprites.svg';
 import { FlagIcon } from 'components/AddWordModal/AddWordModal.styled';
@@ -26,7 +26,7 @@ export const TrainingCard = ({task, onNextClick}) => {
       </Container>
     </TaskItem>
     <TaskItem>
-      <p>{task.ua}</p>
+      <Text>{task.ua}</Text>
       <WrapforUk>
         <FlagIcon>
           <use href={`${sprite}#icon-ua`}></use>
