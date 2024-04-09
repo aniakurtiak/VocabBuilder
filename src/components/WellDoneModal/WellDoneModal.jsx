@@ -10,10 +10,9 @@ import book2x from '../../img/book @2x.png';
 import bookWeb from '../../img/book.webp';
 import book2xWeb from '../../img/book @2x.webp';
 import { useSelector } from 'react-redux';
-import { selectAnswers, selectCheckedAnswers } from '../../redux/selectors';
+import { selectCheckedAnswers } from '../../redux/selectors';
 
 export const WellDoneModal = ({ toggleModal }) => {
-    // const answers = useSelector(selectAnswers);
     const checkAnswers = useSelector(selectCheckedAnswers);
 
     const mistakes = checkAnswers.filter(answer => !answer.isDone);

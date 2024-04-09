@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addWord, addWordFromOtherUser, deleteWord, editWord, fetchAllWords, fetchOwnWords, fetchTasks, sendAnswers } from './operations';
+import { addWord, addWordFromOtherUser, deleteWord, editWord, fetchAllWords, fetchOwnWords, fetchTasks } from './operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -84,13 +84,6 @@ const wordsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      // .addCase(sendAnswers.pending, handlePending)
-      // .addCase(sendAnswers.rejected, handleRejected)
-      // .addCase(sendAnswers.fulfilled, (state, action) => {
-      //   state.checkedAnswers = action.payload;
-      //   state.isLoading = false;
-      //   state.error = null;
-      // });
   },
 });
 

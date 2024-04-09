@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAnswers,  selectCheckedAnswers,  selectTasks } from '../../redux/selectors';
+import { selectAnswers,  selectTasks } from '../../redux/selectors';
 import { TrainingCard } from 'components/TrainingCard/TrainingCard';
 import { BtnContainer, BtnSave, LinkCancel } from './TrainingRoom.styled';
 import { setAnswers, setCheckedAnswers } from '../../redux/words/wordsSlice';
