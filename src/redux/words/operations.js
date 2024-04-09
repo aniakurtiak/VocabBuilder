@@ -97,3 +97,16 @@ export const fetchTasks = createAsyncThunk(
     }
   }
 );
+
+export const sendAnswers = createAsyncThunk(
+  'words/sendAnswers',
+  async (answer, thunkAPI) => {
+    try {
+      const response = await axios.post('/words/answers', answer);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

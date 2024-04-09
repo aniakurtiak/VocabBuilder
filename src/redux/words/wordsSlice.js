@@ -15,6 +15,7 @@ const initialState = {
   error: null,
   selectedWord: null,
   tasks: [],
+  answers: [],
 };
 
 const wordsSlice = createSlice({
@@ -24,6 +25,9 @@ const wordsSlice = createSlice({
     setSelectedWord(state, action) {
       state.selectedWord = action.payload;
     },
+    setAnswers(state, action) {
+      state.answers = action.payload;
+    }
   },
   extraReducers: builder => {
     builder
@@ -79,6 +83,6 @@ const wordsSlice = createSlice({
   },
 });
 
-export const { setSelectedWord } = wordsSlice.actions;
+export const { setSelectedWord, setAnswers } = wordsSlice.actions;
 export const wordsReducer = wordsSlice.reducer;
 

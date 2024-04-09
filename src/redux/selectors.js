@@ -25,3 +25,6 @@ export const selectWordsIsLoading = state => state.words.isLoading;
 export const selectSelectedWord = state => state.words.selectedWord;
 
 export const selectTasks = state => state.words.tasks;
+
+export const selectAnswers = state => state.words.answers;
+
