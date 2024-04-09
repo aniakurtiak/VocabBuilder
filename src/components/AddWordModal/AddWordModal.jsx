@@ -61,7 +61,7 @@ export const AddWordModal = ({ toggleModal, close }) => {
     .unwrap()
       .then(() => {
         dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
-        close();
+        toggleModal()
       })
       .catch(error => {
         toast.error(error); 

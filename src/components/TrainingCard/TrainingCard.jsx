@@ -6,7 +6,6 @@ import {
   Text,
   TrainingListContainer,
   WrapforUk,
-  Wrapper,
 } from './TrainingCard.styled';
 import { IconSvg } from 'components/Dashboard/Dashboard.styled';
 import sprite from '../../icons/sprites.svg';
@@ -14,7 +13,7 @@ import { FlagIcon } from 'components/AddWordModal/AddWordModal.styled';
 import { useSelector } from 'react-redux';
 import { selectAnswers } from '../../redux/selectors';
 
-export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue }) => {
+export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue, showNextButton }) => {
   const answers = useSelector(selectAnswers);
 
   const handleNext = () => {
@@ -22,7 +21,6 @@ export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue }) =
     console.log(answers);
 };
   
-
   return (
     <TrainingListContainer>
       <TaskItem>
@@ -33,18 +31,18 @@ export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue }) =
             placeholder="Enter translation" 
         />
         <Container>
-          <BtnNext onClick={handleNext}>
+          {showNextButton && <BtnNext onClick={handleNext}>
             Next
             <IconSvg>
               <use href={`${sprite}#icon-horizontal`}></use>
             </IconSvg>
-          </BtnNext>
-          <Wrapper>
+          </BtnNext>}
+          <WrapforUk>
             <FlagIcon>
               <use href={`${sprite}#icon-uk`}></use>
             </FlagIcon>
             <p>English</p>
-          </Wrapper>
+          </WrapforUk>
         </Container>
       </TaskItem>
       <TaskItem>

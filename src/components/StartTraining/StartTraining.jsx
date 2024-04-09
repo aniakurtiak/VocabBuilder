@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import reportMob from '../../img/reportMob.png';
 import repotMob2x from '../../img/reportMob@2x.png';
 import reportMobWebp from '../../img/reportMob.webp';
@@ -8,9 +8,17 @@ import report2x from '../../img/report@2x.png';
 import reportWebp from '../../img/report.webp';
 import report2xWebp from '../../img/report@2x.webp';
 import { ContentContainer, LinkStyle, LinkStyle2, NavigateContainer, PictureStyle, StartContainer, Text, Title } from './StartTraining.styled';
+import { AddWordModal } from 'components/AddWordModal/AddWordModal';
+import { Modal } from 'components/Modal/Modal';
 
 
 export const StartTraining = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(prevState => !prevState);
+  };
+
   return (
     <StartContainer>
     <PictureStyle>
@@ -42,10 +50,16 @@ export const StartTraining = () => {
         you are interested in adding to your study.
       </Text>
       <NavigateContainer>
-        <LinkStyle>Add word</LinkStyle>
-        <LinkStyle2>Cancel</LinkStyle2>
+        <LinkStyle to = '/dictionary' onClick={toggleModal}>Add word</LinkStyle>
+        <LinkStyle2 to = '/dictionary'>Cancel</LinkStyle2>
       </NavigateContainer>
    </ContentContainer>
+
+   {isOpen && (
+        <Modal toggleModal={toggleModal}>
+        <AddWordModal/>
+        </Modal>
+      )}
   </StartContainer>
   )
 }

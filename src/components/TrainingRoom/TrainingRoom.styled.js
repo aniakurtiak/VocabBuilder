@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const TrainingListContainer = styled.ul`
@@ -126,7 +127,7 @@ width: 215px;
     }
 `;
 
-export const BtnCancel = styled.button`
+export const LinkCancel = styled(Link)`
   font-weight: 700;
   font-size: 16px;
   color: rgba(18, 20, 23, 0.5);

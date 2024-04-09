@@ -78,7 +78,7 @@ export const editWord = createAsyncThunk(
       console.log(id);
       const response = await axios.patch(`/words/edit/${id}`, otherValues);
       console.log(response.data);
-      return response.data.results;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
     }

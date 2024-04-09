@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAnswers, selectTasks } from '../../redux/selectors';
 import { TrainingCard } from 'components/TrainingCard/TrainingCard';
-import { BtnCancel, BtnContainer, BtnSave } from './TrainingRoom.styled';
+import {BtnContainer, BtnSave, LinkCancel } from './TrainingRoom.styled';
 import { setAnswers } from '../../redux/words/wordsSlice';
 import { sendAnswers } from '../../redux/words/operations';
 import toast from 'react-hot-toast';
+import { useNavigate } from "react-router-dom"
 
 export const TrainingRoom = () => {
   const tasks = useSelector(selectTasks);
@@ -13,6 +14,7 @@ export const TrainingRoom = () => {
   const [inputValues, setInputValues] = useState({});
   const dispatch = useDispatch();
   const answers = useSelector(selectAnswers);
+  const navigate = useNavigate();
 
 
   const handleNextClick = (task) => {
@@ -29,7 +31,10 @@ export const TrainingRoom = () => {
         return { ...prevInputValues, [task._id]: '' };
       });
     }
-    setCurrentCardIndex(prevIndex => prevIndex + 1);
+    if (currentCardIndex < tasks.tasks.length - 1) {
+      setCurrentCardIndex(prevIndex => prevIndex + 1);
+    }
+
   };
 
 
@@ -41,7 +46,8 @@ const handleSave = (task) => {
      console.log(answers);
     })
     .catch(error => {
-      toast.error(error);
+      toast.error('Something went wrong. Your progress will not be saved!');
+      navigate('/dictionary');
     });
   };
 
@@ -53,11 +59,12 @@ const handleSave = (task) => {
           onNextClick={handleNextClick}
           inputValue={inputValues[tasks.tasks[currentCardIndex]._id] || ''}
           setInputValue={(value) => setInputValues({ ...inputValues, [tasks.tasks[currentCardIndex]._id]: value })}
+          showNextButton={currentCardIndex < tasks.tasks.length - 1} 
         />
       )}
       <BtnContainer>
         <BtnSave type='submit' onClick={handleSave}>Save</BtnSave>
-        <BtnCancel>Cancel</BtnCancel>
+        <LinkCancel to = '/dictionary'>Cancel</LinkCancel>
       </BtnContainer>
     </div>
   );
