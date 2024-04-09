@@ -13,7 +13,7 @@ import { FlagIcon } from 'components/AddWordModal/AddWordModal.styled';
 import { useSelector } from 'react-redux';
 import { selectAnswers } from '../../redux/selectors';
 
-export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue, showNextButton }) => {
+export const TrainingCard = ({ task, onNextClick, inputEnValue, setInputEnValue, inputUaValue, setInputUaValue, showNextButton }) => {
   const answers = useSelector(selectAnswers);
 
   const handleNext = () => {
@@ -24,12 +24,12 @@ export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue, sho
   return (
     <TrainingListContainer>
       <TaskItem>
-        <InputStyle
+      {(task.task === "ua") ? <Text>{task.en}</Text> : <InputStyle
             type="text" 
-            value={inputValue} 
-            onChange={(e) => setInputValue(e.target.value)} 
+            value={inputEnValue} 
+            onChange={(e) => setInputEnValue(e.target.value)} 
             placeholder="Enter translation" 
-        />
+        />}
         <Container>
           {showNextButton && <BtnNext onClick={handleNext}>
             Next
@@ -46,7 +46,13 @@ export const TrainingCard = ({ task, onNextClick, inputValue, setInputValue, sho
         </Container>
       </TaskItem>
       <TaskItem>
-        <Text>{task.ua}</Text>
+        {(task.task === "en") ? <Text>{task.ua}</Text> : <InputStyle
+            type="text" 
+            value={inputUaValue} 
+            onChange={(e) => setInputUaValue(e.target.value)} 
+            placeholder="Введіть переклад" 
+        />}
+        {/* <Text>{task.ua}</Text> */}
         <WrapforUk>
           <FlagIcon>
             <use href={`${sprite}#icon-ua`}></use>

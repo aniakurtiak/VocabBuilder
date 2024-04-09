@@ -2,53 +2,97 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAnswers, selectTasks } from '../../redux/selectors';
 import { TrainingCard } from 'components/TrainingCard/TrainingCard';
-import {BtnContainer, BtnSave, LinkCancel } from './TrainingRoom.styled';
+import { BtnContainer, BtnSave, LinkCancel } from './TrainingRoom.styled';
 import { setAnswers } from '../../redux/words/wordsSlice';
 import { sendAnswers } from '../../redux/words/operations';
 import toast from 'react-hot-toast';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
+import { Modal } from 'components/Modal/Modal';
+import { WellDoneModal } from 'components/WellDoneModal/WellDoneModal';
 
 export const TrainingRoom = () => {
   const tasks = useSelector(selectTasks);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [inputValues, setInputValues] = useState({});
+  const [inputEnValues, setInputEnValues] = useState({});
+  const [inputUaValues, setInputUaValues] = useState({});
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const dispatch = useDispatch();
   const answers = useSelector(selectAnswers);
   const navigate = useNavigate();
 
+  const toggleModal = () => {
+    setIsOpen(prevState => !prevState);
+  };
 
-  const handleNextClick = (task) => {
-    const inputValue = inputValues[task._id] || '';
-    if (inputValue.trim() !== '') {
+const handleEnInput = task => {
+  const inputEnValue = inputEnValues[task._id] || '';
+    if (inputEnValue.trim() !== '') {
       const answerCard = {
         _id: task._id,
-        en: inputValue,
+        en: inputEnValue,
         ua: task.ua,
-        task: task.task
+        task: task.task,
       };
       dispatch(setAnswers([...answers, answerCard]));
-      setInputValues(prevInputValues => {
+      setInputEnValues(prevInputValues => {
         return { ...prevInputValues, [task._id]: '' };
       });
     }
+}
+
+
+const handleUaInput = task => {
+  const inputUaValue = inputUaValues[task._id] || '';
+    if (inputUaValue.trim() !== '') {
+      const answerCard = {
+        _id: task._id,
+        en: task.en,
+        ua: inputUaValue,
+        task: task.task,
+      };
+      dispatch(setAnswers([...answers, answerCard]));
+      setInputEnValues(prevInputValues => {
+        return { ...prevInputValues, [task._id]: '' };
+      });
+    }
+}
+
+
+  const handleNextClick = task => {
+    handleEnInput(task);
+    handleUaInput(task);
+    // const inputEnValue = inputEnValues[task._id] || '';
+    // if (inputEnValue.trim() !== '') {
+    //   const answerCard = {
+    //     _id: task._id,
+    //     en: inputEnValue,
+    //     ua: task.ua,
+    //     task: task.task,
+    //   };
+    //   dispatch(setAnswers([...answers, answerCard]));
+    //   setInputEnValues(prevInputValues => {
+    //     return { ...prevInputValues, [task._id]: '' };
+    //   });
+    // }
     if (currentCardIndex < tasks.tasks.length - 1) {
       setCurrentCardIndex(prevIndex => prevIndex + 1);
     }
-
   };
 
-
-const handleSave = (task) => {
-   handleNextClick(task);
-   dispatch(sendAnswers(answers))
-   .unwrap()
-    .then(() => {
-     console.log(answers);
-    })
-    .catch(error => {
-      toast.error('Something went wrong. Your progress will not be saved!');
-      navigate('/dictionary');
-    });
+  const handleSave = (task) => {
+    handleNextClick(task);
+    dispatch(sendAnswers(answers))
+      .unwrap()
+      .then(() => {
+        console.log('answers', answers);  
+        toggleModal();
+      })
+      .catch(error => {
+        toast.error('Something went wrong. Your progress will not be saved!');
+        navigate('/dictionary');
+      });
   };
 
   return (
@@ -57,15 +101,35 @@ const handleSave = (task) => {
         <TrainingCard
           task={tasks.tasks[currentCardIndex]}
           onNextClick={handleNextClick}
-          inputValue={inputValues[tasks.tasks[currentCardIndex]._id] || ''}
-          setInputValue={(value) => setInputValues({ ...inputValues, [tasks.tasks[currentCardIndex]._id]: value })}
-          showNextButton={currentCardIndex < tasks.tasks.length - 1} 
+          inputEnValue={inputEnValues[tasks.tasks[currentCardIndex]._id] || ''}
+          setInputEnValue={value =>
+            setInputEnValues({
+              ...inputEnValues,
+              [tasks.tasks[currentCardIndex]._id]: value,
+            })
+          }
+          inputUaValue={inputUaValues[tasks.tasks[currentCardIndex]._id] || ''}
+          setInputUaValue={value =>
+            setInputUaValues({
+              ...inputUaValues,
+              [tasks.tasks[currentCardIndex]._id]: value,
+            })
+          }
+          showNextButton={currentCardIndex < tasks.tasks.length - 1}
         />
       )}
       <BtnContainer>
-        <BtnSave type='submit' onClick={handleSave}>Save</BtnSave>
-        <LinkCancel to = '/dictionary'>Cancel</LinkCancel>
+        <BtnSave type="submit" onClick={handleSave}>
+          Save
+        </BtnSave>
+        <LinkCancel to="/dictionary">Cancel</LinkCancel>
       </BtnContainer>
+
+      {isOpen && (
+        <Modal toggleModal={toggleModal}>
+          <WellDoneModal  toggleModal={toggleModal}/>
+        </Modal>
+      )}
     </div>
   );
 };
