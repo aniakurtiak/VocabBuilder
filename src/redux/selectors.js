@@ -28,3 +28,5 @@ export const selectTasks = state => state.words.tasks;
 
 export const selectAnswers = state => state.words.answers;
 
+export const selectCheckedAnswers = state => state.words.checkedAnswers;
+

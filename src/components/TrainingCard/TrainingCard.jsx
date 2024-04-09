@@ -52,7 +52,6 @@ export const TrainingCard = ({ task, onNextClick, inputEnValue, setInputEnValue,
             onChange={(e) => setInputUaValue(e.target.value)} 
             placeholder="Введіть переклад" 
         />}
-        {/* <Text>{task.ua}</Text> */}
         <WrapforUk>
           <FlagIcon>
             <use href={`${sprite}#icon-ua`}></use>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAnswers, selectTasks } from '../../redux/selectors';
+import { selectAnswers,  selectCheckedAnswers,  selectTasks } from '../../redux/selectors';
 import { TrainingCard } from 'components/TrainingCard/TrainingCard';
 import { BtnContainer, BtnSave, LinkCancel } from './TrainingRoom.styled';
-import { setAnswers } from '../../redux/words/wordsSlice';
+import { setAnswers, setCheckedAnswers } from '../../redux/words/wordsSlice';
 import { sendAnswers } from '../../redux/words/operations';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +22,7 @@ export const TrainingRoom = () => {
   const answers = useSelector(selectAnswers);
   const navigate = useNavigate();
 
+
   const toggleModal = () => {
     setIsOpen(prevState => !prevState);
   };
@@ -34,6 +35,7 @@ const handleEnInput = task => {
         en: inputEnValue,
         ua: task.ua,
         task: task.task,
+    
       };
       dispatch(setAnswers([...answers, answerCard]));
       setInputEnValues(prevInputValues => {
@@ -63,19 +65,6 @@ const handleUaInput = task => {
   const handleNextClick = task => {
     handleEnInput(task);
     handleUaInput(task);
-    // const inputEnValue = inputEnValues[task._id] || '';
-    // if (inputEnValue.trim() !== '') {
-    //   const answerCard = {
-    //     _id: task._id,
-    //     en: inputEnValue,
-    //     ua: task.ua,
-    //     task: task.task,
-    //   };
-    //   dispatch(setAnswers([...answers, answerCard]));
-    //   setInputEnValues(prevInputValues => {
-    //     return { ...prevInputValues, [task._id]: '' };
-    //   });
-    // }
     if (currentCardIndex < tasks.tasks.length - 1) {
       setCurrentCardIndex(prevIndex => prevIndex + 1);
     }
@@ -85,8 +74,8 @@ const handleUaInput = task => {
     handleNextClick(task);
     dispatch(sendAnswers(answers))
       .unwrap()
-      .then(() => {
-        console.log('answers', answers);  
+      .then((data) => {
+        dispatch(setCheckedAnswers(data));
         toggleModal();
       })
       .catch(error => {

@@ -16,6 +16,7 @@ const initialState = {
   selectedWord: null,
   tasks: [],
   answers: [],
+  checkedAnswers: [],
 };
 
 const wordsSlice = createSlice({
@@ -27,7 +28,10 @@ const wordsSlice = createSlice({
     },
     setAnswers(state, action) {
       state.answers = action.payload;
-    }
+    },
+    setCheckedAnswers(state, action) {
+      state.checkedAnswers= action.payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -80,16 +84,16 @@ const wordsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(sendAnswers.pending, handlePending)
-      .addCase(sendAnswers.rejected, handleRejected)
-      .addCase(sendAnswers.fulfilled, (state, action) => {
-        state.answers = [];
-        state.isLoading = false;
-        state.error = null;
-      });
+      // .addCase(sendAnswers.pending, handlePending)
+      // .addCase(sendAnswers.rejected, handleRejected)
+      // .addCase(sendAnswers.fulfilled, (state, action) => {
+      //   state.checkedAnswers = action.payload;
+      //   state.isLoading = false;
+      //   state.error = null;
+      // });
   },
 });
 
-export const { setSelectedWord, setAnswers } = wordsSlice.actions;
+export const { setSelectedWord, setAnswers, setCheckedAnswers } = wordsSlice.actions;
 export const wordsReducer = wordsSlice.reducer;
 
