@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addWord, addWordFromOtherUser, deleteWord, editWord, fetchAllWords, fetchOwnWords } from './operations';
+import { addWord, addWordFromOtherUser, deleteWord, editWord, fetchAllWords, fetchOwnWords, fetchTasks } from './operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -14,6 +14,7 @@ const initialState = {
   isLoading: false,
   error: null,
   selectedWord: null,
+  tasks: [],
 };
 
 const wordsSlice = createSlice({
@@ -65,6 +66,13 @@ const wordsSlice = createSlice({
       .addCase(addWordFromOtherUser.rejected, handleRejected)
       .addCase(addWordFromOtherUser.fulfilled, (state, action) => {
         state.words = action.payload;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(fetchTasks.pending, handlePending)
+      .addCase(fetchTasks.rejected, handleRejected)
+      .addCase(fetchTasks.fulfilled, (state, action) => {
+        state.tasks = action.payload;
         state.isLoading = false;
         state.error = null;
       });

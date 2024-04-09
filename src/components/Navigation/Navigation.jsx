@@ -11,9 +11,6 @@ import {
 import { UserNav } from 'components/UserNav/UserNav';
 
 export const Navigation = ({toggleModal}) => {
-  // const dispatch = useDispatch();
-  // const handleLogOut = () => dispatch(logOut());
-
 
   return (
     <NavContainer>
@@ -25,8 +22,6 @@ export const Navigation = ({toggleModal}) => {
           <BurgerMenuIcon />
         </BurgerMenuBtn>
      </UserBarWrapper>
-
-      {/* <button type="button" onClick={handleLogOut}>Logout</button> */}
     </NavContainer>
   );
 };

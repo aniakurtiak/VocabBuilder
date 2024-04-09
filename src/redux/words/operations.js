@@ -84,3 +84,16 @@ export const editWord = createAsyncThunk(
     }
   }
 );
+
+export const fetchTasks = createAsyncThunk(
+  'words/fetchTasks',
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get('/words/tasks');
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);

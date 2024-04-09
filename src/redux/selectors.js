@@ -23,3 +23,5 @@ export const selectWordsError = state => state.words.error;
 export const selectWordsIsLoading = state => state.words.isLoading;
 
 export const selectSelectedWord = state => state.words.selectedWord;
+
+export const selectTasks = state => state.words.tasks;
