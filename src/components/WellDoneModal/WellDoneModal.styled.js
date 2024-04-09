@@ -12,7 +12,7 @@ export const WellDoneContainer = styled.div`
   padding: 48px 16px;
 
   @media screen and (min-width: 768px) {
-    width: 627px;
+    width: 527px;
     padding: 48px 64px;
   }
 `;
@@ -48,18 +48,27 @@ letter-spacing: -0.02em;
 text-align: center;
 color: ${({ theme }) => theme.white};
 margin-bottom: 28px;
+
+@media screen and (min-width: 768px) {
+  font-size: 40px;
+line-height: 1.2;
+
+}
 `;
 
 export const PictureStyle = styled.picture`
-  position: absolute;
-  bottom: 0;
-  right: 0;
+display: flex;
+justify-content: end;
 `;
 
 export const ColumnsWrapper = styled.div`
 display: flex;
 gap: 32px;
 margin-bottom: 24px;
+
+@media screen and (min-width: 768px) {
+  gap: 64px;
+}
 `;
 
 export const ColumnsTitle = styled.h3`
@@ -68,4 +77,22 @@ font-size: 14px;
 line-height: 1.5;
 color: rgba(252, 252, 252, 0.5);
 margin-bottom: 8px;
+
+@media screen and (min-width: 768px) {
+  font-size: 16px;
+} 
+`;
+
+export const WordsContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap: 4px;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: ${({ theme }) => theme.white};
+
+@media screen and (min-width: 768px) {
+  font-size: 20px;
+}
 `;
