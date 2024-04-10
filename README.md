@@ -1,6 +1,6 @@
 # VocabBuilder App
 
-![VocabBuilder Website](../assets/Register.png)
+![VocabBuilder Website](./assets/Register.png)
 
 
 ## Overview
@@ -17,20 +17,20 @@ and setting additional features refer to the [documentation](https://facebook.gi
 ## Pages
 
 ### Authorizations
-![Authrizations](../assets/LoginMob.png)
+![Authrizations](./assets/LoginMob.png)
 Includes Login and Registration pages implemented and validated using libraries Formik & Yup
 
 ### Dictionary Page
-![Dictionary Page](../assets/Dictionary.png)
+![Dictionary Page](./assets/Dictionary.png)
 The Dictionary Page ("/dictionary") allows users to efficiently manage their vocabulary learning process. It consists of such components as Dashboard, Words Table, Add/Edit Word Modals, Pagination
 
 ### Reccomend Page
-![Reccomend Page](../assets/ReccomendPage.png)
+![Reccomend Page](./assets/ReccomendPage.png)
 The Recommend Page is designed to assist authenticated users in discovering new words tailored to their preferences and maintaining control over their vocabulary learning. It consists of the following components:Dashboard, Words Table, Pagination.
 
 
 ### Training Page
-![Training Page](../assets/Training.png)
+![Training Page](./assets/Training.png)
 The Training Page ("/training") offers users a platform to engage in vocabulary training sessions. It comprises the following components:ProgressBar Componen and TrainingRoom Block, and WellDone Modal
 
 ## Technical Specifications
