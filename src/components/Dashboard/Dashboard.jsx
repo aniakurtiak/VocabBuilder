@@ -16,7 +16,6 @@ export const Dashboard = ({onClickAddWord}) => {
   return (
     <DashboardContainer>
       <Filters />
-
       <StatisticsContainer>
         <StatisticsText>To study: </StatisticsText>
         <Wrapper>

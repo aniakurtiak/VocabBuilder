@@ -1,3 +1,4 @@
+import { createSelector } from "@reduxjs/toolkit";
 export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 
 export const selectUser = state => state.auth.user;
@@ -17,6 +18,28 @@ export const selectError = state => state.auth.error;
 export const selectIsLoading = state => state.auth.isLoading;
 
 export const selectWords = state => state.words.words;
+
+export const selectVisibleWords = createSelector(
+    [selectWords, selectSelectedCategory],
+    (words, filters) => {
+        if (filters === '') {
+            return words;
+        }
+        if (Array.isArray(words)) {
+            return words.filter(word => 
+                word.category.toLowerCase().includes(filters.value.toLowerCase())
+            );
+        }
+        console.log('Words:', words);
+        console.log('Filters:', filters);
+    }
+);
+
+// contact.name.toLowerCase().includes(filter.toLowerCase())
+
+
+
+
 
 export const selectWordsError = state => state.words.error;
 

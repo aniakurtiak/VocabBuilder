@@ -1,5 +1,7 @@
-import {  useSelector } from 'react-redux';
-import {  selectWords } from '../../redux/selectors';
+import { useSelector } from 'react-redux';
+import {
+  selectVisibleWords,
+} from '../../redux/selectors';
 import { useTable } from 'react-table';
 import {
   HeadRow,
@@ -11,12 +13,14 @@ import {
 } from './WordsTable.styled';
 import React from 'react';
 
+export const WordsTable = ({ onClickEditWord, columns }) => {
+  const words = useSelector(selectVisibleWords);
+  // const keyword = useSelector(selectSearchKeyword);
 
-
-export const WordsTable = ({onClickEditWord , columns}) => {
-  const words = useSelector(selectWords);
-
-  const data = React.useMemo(() => words.results || [], [words.results]);
+  const data = React.useMemo(
+    () => (words && words.results ? words.results : []),
+    [words]
+  );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
@@ -42,7 +46,7 @@ export const WordsTable = ({onClickEditWord , columns}) => {
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => (
                   <TableRow {...cell.getCellProps()}>
-                  {cell.render('Cell', { word: row.original })} 
+                    {cell.render('Cell', { word: row.original })}
                   </TableRow>
                 ))}
               </tr>
