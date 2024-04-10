@@ -50,7 +50,7 @@ const LoginPage = () => {
 
   const RegisterSchema = Yup.object().shape({
     email: Yup.string()
-      .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
+      .matches(/^[.\w]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
       .required('Required'),
     password: Yup.string()
     .matches(/^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/, 'Error password')
