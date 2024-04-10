@@ -21,6 +21,7 @@ const DictionaryPage = () => {
   const [editWordModal, setEditWordModal] = useState(false);
   const dispatch = useDispatch();
   const words = useSelector(selectWords);
+  console.log(words);
   const totalPages = words.totalPages;
 
   const toggleModal = useCallback(() => {
