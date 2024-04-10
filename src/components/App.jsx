@@ -14,7 +14,6 @@ const DictionaryPage = lazy(() => import('../pages/DictionaryPage/DictionaryPage
 const RecommendPage = lazy(() => import('../pages/RecommendPage/RecommendPage'));
 const TrainingPage = lazy(() => import('../pages/TrainingPage/TrainingPage'));
 
-
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
@@ -28,7 +27,7 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<LoginPage />} />
+        <Route index element={<DictionaryPage />} />
         <Route
           path="/register"
           element={
@@ -45,12 +44,6 @@ export const App = () => {
           }
         />
         <Route
-          path="/dictionary"
-          element={
-            <PrivateRoute component={DictionaryPage} redirectTo="/login" />
-          }
-        />
-        <Route
           path="/recommend"
           element={
             <PrivateRoute component={RecommendPage} redirectTo="/login" />
@@ -63,6 +56,11 @@ export const App = () => {
           }
         />
       </Route>
+      <Route
+        path="/dictionary"
+        element={<PrivateRoute component={DictionaryPage} redirectTo="/login" />}
+      />
     </Routes>
   );
 };
+
