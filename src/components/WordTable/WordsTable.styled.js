@@ -65,6 +65,12 @@ export const TableRow = styled.td`
     background: ${({ theme }) => theme.white};
   }
 
+  &:nth-child(3n){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 18px;
     font-weight: 500;

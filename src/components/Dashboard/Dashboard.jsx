@@ -1,5 +1,5 @@
 import { Filters } from 'components/Filters/Filters';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   AddWordButton,
   DashboardContainer,
@@ -10,16 +10,25 @@ import {
   Wrapper,
 } from './Dashboard.styled';
 import sprite from '../../icons/sprites.svg';
+import { selectStatistics } from '../../redux/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { getStatistics } from '../../redux/words/operations';
 
-export const Dashboard = ({onClickAddWord}) => {
+export const Dashboard = ({ onClickAddWord }) => {
+  const statistics = useSelector(selectStatistics);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getStatistics());
+  }, [dispatch]);
 
   return (
     <DashboardContainer>
       <Filters />
       <StatisticsContainer>
-        <StatisticsText>To study: </StatisticsText>
+        <StatisticsText>To study: {statistics.totalCount} </StatisticsText>
         <Wrapper>
-          <AddWordButton type='button' onClick={onClickAddWord}>
+          <AddWordButton type="button" onClick={onClickAddWord}>
             Add word
             <IconSvg>
               <use href={`${sprite}#icon-plus`}></use>

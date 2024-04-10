@@ -26,7 +26,6 @@ export const ActionsPopover = ({ word, onClickEditWord }) => {
 
 
   const handleDeleteClick = (word) => {
-    console.log(word._id);
     dispatch(deleteWord(word._id))
     .unwrap()
     .then(() => {

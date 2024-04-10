@@ -12,7 +12,6 @@ export const addWord = createAsyncThunk(
         category: values.category.toLowerCase(),
       };
       const response = await axios.post('/words/create', lowercaseValues);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -25,7 +24,6 @@ export const addWordFromOtherUser = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await axios.post(`/words/add/${id}`, id);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -75,9 +73,7 @@ export const editWord = createAsyncThunk(
   async (updatedValues, thunkAPI) => {
     try {
       const { id, ...otherValues } = updatedValues;
-      console.log(id);
       const response = await axios.patch(`/words/edit/${id}`, otherValues);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -90,7 +86,6 @@ export const fetchTasks = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const response = await axios.get('/words/tasks');
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);
@@ -103,7 +98,18 @@ export const sendAnswers = createAsyncThunk(
   async (answer, thunkAPI) => {
     try {
       const response = await axios.post('/words/answers', answer);
-      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data.message);
+    }
+  }
+);
+
+export const getStatistics = createAsyncThunk(
+  'words/getStatistics',
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get('/words/statistics');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data.message);

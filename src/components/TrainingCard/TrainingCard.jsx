@@ -10,8 +10,6 @@ import {
 import { IconSvg } from 'components/Dashboard/Dashboard.styled';
 import sprite from '../../icons/sprites.svg';
 import { FlagIcon } from 'components/AddWordModal/AddWordModal.styled';
-import { useSelector } from 'react-redux';
-import { selectAnswers } from '../../redux/selectors';
 
 export const TrainingCard = ({
   task,
@@ -22,11 +20,9 @@ export const TrainingCard = ({
   setInputUaValue,
   showNextButton,
 }) => {
-  const answers = useSelector(selectAnswers);
 
   const handleNext = () => {
     onNextClick(task);
-    console.log(answers);
   };
 
   return (

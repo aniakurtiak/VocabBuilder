@@ -13,6 +13,7 @@ import { FlagIcon, IconContainer } from 'components/Layout/Layout.styled';
 import { WordsPagination } from 'components/WordsPagination/WordsPagination';
 import { useSelector } from 'react-redux';
 import { selectWords } from '../../redux/selectors';
+import { ProgressBar } from 'components/StartTraining/ProgressBar/ProgressBar';
 
 const DictionaryPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,14 +81,25 @@ const DictionaryPage = () => {
       {
         Header: 'Progress',
         accessor: 'progress',
+        Cell: ({ value }) => (
+          <div  style={{ display: 'flex', alignItems: 'center'}}>
+            <span style={{ marginRigth: '5px' }}>{value}%</span>
+            <ProgressBar progress={value} />
+          </div>
+        ),
         width: 95,
       },
       {
         Header: '',
         accessor: 'actions',
-        Cell: ({ row }) => <ActionsPopover word={row.original} onClickEditWord={onClickEditWord} />,
+        Cell: ({ row }) => (
+          <ActionsPopover
+            word={row.original}
+            onClickEditWord={onClickEditWord}
+          />
+        ),
         width: 50,
-      }
+      },
     ],
     [onClickEditWord]
   );
@@ -96,18 +108,23 @@ const DictionaryPage = () => {
     dispatch(fetchOwnWords({ page: 1, perPage: 10 }));
   }, [dispatch]);
 
-
   return (
     <DictionaryContainer>
-      <Dashboard onClickAddWord={onClickAddWord}/>
-      <WordsTable columns = {columns}/>
-      <WordsPagination pageCount={totalPages}  handlePageClick={({ selected }) => handlePageClick(selected)}/>
-
+      <Dashboard onClickAddWord={onClickAddWord} />
+      <WordsTable columns={columns} />
+      <WordsPagination
+        pageCount={totalPages}
+        handlePageClick={({ selected }) => handlePageClick(selected)}
+      />
 
       {isOpen && (
-        <Modal toggleModal={toggleModal} >
-          {addWordModal && <AddWordModal toggleModal={toggleModal} close={close} />}
-          {editWordModal && <EditWordModal toggleModal={toggleModal} close={close}/>}
+        <Modal toggleModal={toggleModal}>
+          {addWordModal && (
+            <AddWordModal toggleModal={toggleModal} close={close} />
+          )}
+          {editWordModal && (
+            <EditWordModal toggleModal={toggleModal} close={close} />
+          )}
         </Modal>
       )}
     </DictionaryContainer>

@@ -57,7 +57,7 @@ export const StartTraining = () => {
 
    {isOpen && (
         <Modal toggleModal={toggleModal}>
-        <AddWordModal/>
+        <AddWordModal oggleModal={toggleModal}/>
         </Modal>
       )}
   </StartContainer>

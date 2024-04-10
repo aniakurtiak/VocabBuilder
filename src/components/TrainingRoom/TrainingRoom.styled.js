@@ -156,3 +156,24 @@ export const LinkCancel = styled(Link)`
   }
 `;
 
+export const ProgressContainer = styled.div`
+  position: relative;
+  width: 25px;
+  height: 30px;
+  margin-left: 299px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 646px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 999px;
+  }
+`;
+
+export const ProgressNumber = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;

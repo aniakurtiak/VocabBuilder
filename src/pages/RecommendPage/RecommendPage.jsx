@@ -21,10 +21,8 @@ const RecommendPage = () => {
   const dispatch = useDispatch();
   const words = useSelector(selectWords);
   const totalPages = words.totalPages;
-  console.log(totalPages);
 
   const handleAddToDictionary = (word) => {
-    console.log(word._id);
     dispatch(addWordFromOtherUser(word._id))
     .unwrap()
       .then(() => {

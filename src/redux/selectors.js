@@ -53,3 +53,4 @@ export const selectAnswers = state => state.words.answers;
 
 export const selectCheckedAnswers = state => state.words.checkedAnswers;
 
+export const selectStatistics = state => state.words.statistics;

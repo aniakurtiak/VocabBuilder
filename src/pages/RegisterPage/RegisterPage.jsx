@@ -53,7 +53,7 @@ const RegisterPage = () => {
       .required('Required')
       .matches(/^[\p{L}\s]+$/u, 'Name must contain only letters and spaces'),
     email: Yup.string()
-      .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
+      .matches(/^[.\w]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Invalid email')
       .required('Required'),
     password: Yup.string()
     .matches(/^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/, 'The password must consist of 6 English letters and 1 numberd')
