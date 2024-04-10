@@ -46,7 +46,7 @@ const validationSchema = Yup.object().shape({
     .required('Ukrainian is required'),
 });
 
-export const AddWordModal = ({ toggleModal, close }) => {
+export const AddWordModal = ({ toggleModal }) => {
   const categories = useSelector(selectCategories);
   const dispatch = useDispatch();
   const error = useSelector(selectWordsError);

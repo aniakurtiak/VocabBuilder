@@ -14,6 +14,7 @@ import { WordsPagination } from 'components/WordsPagination/WordsPagination';
 import { useSelector } from 'react-redux';
 import { selectWords } from '../../redux/selectors';
 import { ProgressBar } from 'components/StartTraining/ProgressBar/ProgressBar';
+import { Text } from 'components/StartTraining/StartTraining.styled';
 
 const DictionaryPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +84,7 @@ const DictionaryPage = () => {
         Header: 'Progress',
         accessor: 'progress',
         Cell: ({ value }) => (
-          <div  style={{ display: 'flex', alignItems: 'center'}}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <span style={{ marginRigth: '5px' }}>{value}%</span>
             <ProgressBar progress={value} />
           </div>
@@ -112,11 +113,17 @@ const DictionaryPage = () => {
   return (
     <DictionaryContainer>
       <Dashboard onClickAddWord={onClickAddWord} />
-      <WordsTable columns={columns} />
-      <WordsPagination
-        pageCount={totalPages}
-        handlePageClick={({ selected }) => handlePageClick(selected)}
-      />
+      {words && words.results && words.results.length > 0 ? (
+        <>
+          <WordsTable columns={columns} data={words.data} />
+          <WordsPagination
+            pageCount={totalPages}
+            handlePageClick={({ selected }) => handlePageClick(selected)}
+          />
+        </>
+       ) : (
+        <Text>Please add words at first.</Text>
+      )} 
 
       {isOpen && (
         <Modal toggleModal={toggleModal}>
