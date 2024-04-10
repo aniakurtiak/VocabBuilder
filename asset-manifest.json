@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/VocabBuilder/static/css/main.059fdb92.css",
-    "main.js": "/VocabBuilder/static/js/main.6d543cac.js",
+    "main.js": "/VocabBuilder/static/js/main.58fc8fe6.js",
     "static/js/215.78e54c73.chunk.js": "/VocabBuilder/static/js/215.78e54c73.chunk.js",
-    "static/js/977.8cf5cb9a.chunk.js": "/VocabBuilder/static/js/977.8cf5cb9a.chunk.js",
+    "static/js/977.26ae910e.chunk.js": "/VocabBuilder/static/js/977.26ae910e.chunk.js",
     "static/js/164.d13e8cbd.chunk.js": "/VocabBuilder/static/js/164.d13e8cbd.chunk.js",
     "static/js/287.3e595278.chunk.js": "/VocabBuilder/static/js/287.3e595278.chunk.js",
     "static/js/182.5dcd387f.chunk.js": "/VocabBuilder/static/js/182.5dcd387f.chunk.js",
@@ -116,9 +116,9 @@
     "static/media/burger-menu.svg": "/VocabBuilder/static/media/burger-menu.424592733778a4d52889214303e00fd1.svg",
     "static/media/search.svg": "/VocabBuilder/static/media/search.0c70c359be9f625367cb2a522feff44d.svg",
     "main.059fdb92.css.map": "/VocabBuilder/static/css/main.059fdb92.css.map",
-    "main.6d543cac.js.map": "/VocabBuilder/static/js/main.6d543cac.js.map",
+    "main.58fc8fe6.js.map": "/VocabBuilder/static/js/main.58fc8fe6.js.map",
     "215.78e54c73.chunk.js.map": "/VocabBuilder/static/js/215.78e54c73.chunk.js.map",
-    "977.8cf5cb9a.chunk.js.map": "/VocabBuilder/static/js/977.8cf5cb9a.chunk.js.map",
+    "977.26ae910e.chunk.js.map": "/VocabBuilder/static/js/977.26ae910e.chunk.js.map",
     "164.d13e8cbd.chunk.js.map": "/VocabBuilder/static/js/164.d13e8cbd.chunk.js.map",
     "287.3e595278.chunk.js.map": "/VocabBuilder/static/js/287.3e595278.chunk.js.map",
     "182.5dcd387f.chunk.js.map": "/VocabBuilder/static/js/182.5dcd387f.chunk.js.map",
@@ -128,6 +128,6 @@
   },
   "entrypoints": [
     "static/css/main.059fdb92.css",
-    "static/js/main.6d543cac.js"
+    "static/js/main.58fc8fe6.js"
   ]
 }
