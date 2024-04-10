@@ -19,7 +19,9 @@ export const LoginrWrapper = styled.div`
     align-items: center;
     padding-top:114px;
     padding-bottom: 104px;
-    padding-right: 34px;
+    /* padding-right: 34px; */
+    padding-left: 100px;
+    padding-right: 100px;
   }
 `;
 
@@ -93,7 +95,7 @@ export const BenefitItem = styled.li`
 export const AuthContainer = styled.div`
   display: flex;
   flex-direction: column;
-  border-radius: 25px 25px 0 0;
+  border-radius: 25px;
   background-color: rgba(133, 170, 159, 0.1);
   margin-top: 8px;
   padding-bottom: 57px;
