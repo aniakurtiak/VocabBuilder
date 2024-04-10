@@ -5,63 +5,59 @@
 
 ## Overview
 
-This project is a web application consisting of three pages: "Home," "Teachers," and "Favorites." The application showcases the benefits of the company, enables users to add their favorite teachers to a personalized list.
+VocabBuilder is a program designed to expand your vocabulary and language skills. With its help, you will be able to add and practice learning new words every day, tracking your progress. There are pages for this on the site "Register", 'Login", "Dictionary," "Recommend," and "Training." 
 
 ## Technologies Used
 
 - React: The project is built using [Create React App](https://github.com/facebook/create-react-app).For acquaintance
 and setting additional features refer to the [documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-- [Firebase](https://firebase.google.com/docs/reference): Firebase is used for authentication, real-time database, and data storage.
 - [Formik & Yup](https://formik.org/): Formik is employed for form management, and Yup is used for form validation.
-- React Router: React Router is utilized for client-side routing within the application.
+- [React Router](https://reactrouter.com/en/main): React Router is utilized for client-side routing within the application.
 
 ## Pages
 
-### Home Page
-![Home Page](./assets/image.jpg)
-Displays company advantages.
-Includes a link to start using the application, redirecting users to the "Teachers" page.
-Implements styling with variations in color palettes or a prototype for uniqueness.
+### Authorizations
+![Authrizations](../assets/LoginMob.png)
+Includes Login and Registration pages implemented and validated using libraries Formik & Yup
 
-### Teachers Page
-![Teachers Page](./assets/teachers1.jpg)
-Renders teacher cards with basic information.
-Allows users to load more teacher cards dynamically.
-Implements actions such as adding a teacher to favorites, expanding detailed information, and booking a trial lesson.
+### Dictionary Page
+![Dictionary Page](../assets/Dictionary.png)
+The Dictionary Page ("/dictionary") allows users to efficiently manage their vocabulary learning process. It consists of such components as Dashboard, Words Table, Add/Edit Word Modals, Pagination
+
+### Reccomend Page
+![Reccomend Page](../assets/ReccomendPage.png)
+The Recommend Page is designed to assist authenticated users in discovering new words tailored to their preferences and maintaining control over their vocabulary learning. It consists of the following components:Dashboard, Words Table, Pagination.
 
 
-### Favorites Page
-![Favorites Page](./assets/favorites1.jpg)
-A private page accessible to authenticated users.
-Displays teacher cards that the user has added to favorites.
-Styled similarly to the "Teachers" page.
+### Training Page
+![Training Page](../assets/Training.png)
+The Training Page ("/training") offers users a platform to engage in vocabulary training sessions. It comprises the following components:ProgressBar Componen and TrainingRoom Block, and WellDone Modal
 
 ## Technical Specifications
 
-### Firebase Authentication:
-Implements user registration, login, data retrieval for the current user, and logout.
+### Authorizations:
+Realized private and public routes with the help of React Router library.
 
-### Formik & Yup:
-Implements registration/login forms with minimal validation.
-Modal form closes on clicking the close button, backdrop, or pressing the Esc key.
+### Navigation:
+On mobile and tablet versions, UserNav and UserBar are implemented in the form of a burger menu.
 
-### Firebase Realtime Database:
-Creates a collection of teachers with specified fields using Firebase Realtime Database.
-Utilizes a provided JSON file (teachers.json) for populating the collection.
+### Words Table:
+Implemented using React Table.
 
-### Teacher Card:
-Renders teacher information based on the provided layout.
+Includes functionality for editing and deleting words.
 
-### Favorites Functionality:
-Allows users to add/remove teacher cards to/from their favorites.
-Maintains the selected state even after page refresh for authenticated users.
+Modal forms are closed after clicking the close button, background or pressing the Esc key and are implemented using portals
 
-### Read More and Book Trial Lesson:
-Expands teacher card details on clicking "Read more."
-Opens a modal form for booking a trial lesson on clicking "Book trial lesson."
+Visualizes the progress of learning a word using the react-progress library
 
-### React Router:
-Implements client-side routing using React Router.
+### Training Room:
+The ProgressBar component aids in visualizing the user's progress during training sessions.
+
+Automatically navigates to the next task upon clicking the "Next" button.
+
+Displays success or failure messages to the user based on the backend response.
+
+Provides visual cues to the user for correct and incorrect responses
 
 ## Getting Started
 
@@ -71,8 +67,8 @@ To get started with this project, follow the installation instructions below.
 
 1. Clone the repository to your local computer
 ```bash
-   git clone https://github.com/aniakurtiak/learnLingo
-   cd learnLingo-app
+   git clone https://github.com/aniakurtiak/VocabBuilder
+   cd vocabBuilder-app
    ```
 2. Install the dependencies:
    ```bash
@@ -83,6 +79,6 @@ To get started with this project, follow the installation instructions below.
    npm start
    ``` 
 4. Open
-   [https://aniakurtiak.github.io/learnLingo/](https://aniakurtiak.github.io/learnLingo/)
+   [https://aniakurtiak.github.io/learnLingo/](https://aniakurtiak.github.io/VocabBuilder/dictionary)
    to view it in the browser.
 
